@@ -34,6 +34,19 @@ This project serves as a public place where VA Smalltalk users can see and submi
 - Run Docker `build` and `run` commands
 
 
+## Next steps
+
+There are lots of areas of interest we would like to investigate and research. But a few possibilities are:
+
+- Make VA run with docker more images:
+  - A regular CentOS/RedHat/Fedora variant.
+  - Alipe Linux and Fedora Atomic
+- Try with [balenaOS](https://www.balena.io/os/) as a host OS and a [pigpio-ready image](https://github.com/lachatak/rpi-pigpio). This way we can also test the [VAST GPIO binding](http://vastgoodies.com/projects/Raspberry%2520Pi%2520Hardware%2520Interface)
+- Take a look to [portainer.io](https://www.portainer.io/) container for graphical management.
+- Use `docker-compose` and allow having N number of replicas (our VAST running images) running in the same node with a load balancer on front.
+- Experiment with `Docker Swarm` and `Kubernetes`
+
+
 ## Acknowledgments
 
 - Norbert Schlemmer for the work on getting the examples to work in Raspberry.
