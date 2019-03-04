@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!-- Mappings for the SOAP envelope namespace.  These mappings are used during processing of SOAP requests -->
+<!DOCTYPE XmlMappingSpec SYSTEM "abtxmap.dtd" >
+<XmlMappingSpec Name="SoapMappings" NameSpaceURI="http://schemas.xmlsoap.org/soap/envelope/">
+
+<!-- Mapping for Envelope -->
+<ClassElementMapping ElementTagName="Envelope" ClassName="SstSoapEnvelope">
+<AttributeMapping SetSelector="header:" GetSelector="header">
+	<SubElement>SOAP-ENV:Header</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="body:" GetSelector="body" Required="true">
+	<SubElement>SOAP-ENV:Body</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="encodingStyle:"  GetSelector="encodingStyle">
+	<Attribute>encodingStyle</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="addElement:" >
+	<SubElement>*</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+<!-- Mapping for Body -->
+<ClassElementMapping ElementTagName="Body" ClassName="SstSoapBody">
+<AttributeMapping SetSelector="encodingStyle:" GetSelector="encodingStyle">
+	<Attribute>encodingStyle</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="payload:" GetSelector="payload">
+	<SubElement>*</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+
+<!-- Mapping for Header -->
+<ClassElementMapping ElementTagName="Header" ClassName="SstSoapHeader">
+<AttributeMapping SetSelector="encodingStyle:" GetSelector="encodingStyle">
+	<Attribute>encodingStyle</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="payload:" GetSelector="payload">
+	<SubElement>*</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+<!-- Mapping for Fault  -->
+<ClassElementMapping ElementTagName="Fault" ClassName="SstSoap11Fault">
+<AttributeMapping SetSelector="faultCode:" GetSelector="faultCode">
+	<SubElement>faultcode</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="faultString:" GetSelector="faultString">
+	<SubElement>faultstring</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="faultActor:" GetSelector="faultActor">
+	<SubElement>faultactor</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="detail:" GetSelector="detail">
+	<SubElement>detail</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+</XmlMappingSpec>

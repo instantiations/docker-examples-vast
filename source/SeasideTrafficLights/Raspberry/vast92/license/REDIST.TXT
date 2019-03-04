@@ -1,0 +1,232 @@
+ 
+Redistribution Information 
+
+The license agreement for the Program refers you to this file for a list of redistributable files
+and applications included with the "Program", and for the form of copyright notice you must place
+on each copy of your application in certain cases.  Please refer to the license agreement for the
+Program for the terms and conditions which apply to your distribution of the files and applications
+listed in this file.
+
+--------------------------------------------
+
+The following files are the REDISTRIBUTABLE FILES for VA Smalltalk, V9.1.0:
+
+*.cat
+*.ic
+*.mpr
+abtcldef.dtd
+abtico50.dll
+abtico50.dll
+abtln40.dll
+abtntsir.exe
+abtntsrv.exe
+abtpay91.*
+abtprc91.*
+abtschem.map
+abtvae40.win
+abtvae40.x
+abtvast.map
+abtvxt40.dll
+abtwci40.dll
+abtwos40.dll
+abtwsac.exe
+abtwsam.dll
+abtwsc.dll
+abtwsi.cnf
+abtwsi.jar
+abtwsi.pro
+abtwstt.dll
+abtxmap.dtd
+clks.bmp
+convic
+convic.exe
+convic.exe.manifest
+cursors.obj
+esae40.dll
+escgi40.dll
+esdec40.dll
+eslz440.*
+esmem40.dll
+essci40.dll
+esswp40.dll
+esver40.dll
+esvio.exe
+esvm40.dll
+eszip40.*
+i0000*.ico
+libessci40.*
+nodialog
+nodialog.exe
+nodialog.exe.manifest
+rgb.txt
+sqlite3
+sqlite3.dll
+sqlite3.exe
+sstaxis.xsd
+sstaxis.map
+sstidlic.swp
+sstsoenc.map
+sstsoenc.xsd
+sstsoenc12.map
+sstsoenc12.xsd
+sstsoenv.map
+sstsoenv.xsd
+sstsoenv12.map
+sstsoenv12.xsd
+sstwsadi.wsd
+sstwsadm.wsd
+sstwsadm.xml
+sstwsdep.map
+sstwsdep.xsd
+sstwsdl.map
+sstwsdl.xsd
+sstwsdlsoap12.map
+sstwsdlsoap12.xsd
+vasslthreads.dll
+xml.xsd
+
+--------------------------------------------
+
+This is the copyright notice which you must use to label your application which includes
+any of the above files per the terms of the license agreement for this Program:
+
+     "CONTAINS
+
+     VA Smalltalk, V9.1.0 Runtime Modules
+     (c) Copyright Instantiations Corporation 2005-2018. All Rights Reserved.
+     (c) Copyright IBM Corporation 1994-2006. All Rights Reserved."
+
+--------------------------------------------
+	 
+The following configuration maps contain the REDISTRIBUTABLE APPLICATIONS for VA Smalltalk, V9.1.0:
+
+AbtAPPCBase
+AbtAPPCRun
+AbtBaseDatabase
+AbtBaseDatabaseSupport
+AbtBaseIbmCliDatabase
+AbtBaseLanguageRun
+AbtBaseLanguageVARun
+AbtBaseOdbc
+AbtBaseOracle
+AbtBidiSupportRun
+AbtBidiSupportRunBase
+AbtCICSBase
+AbtCICSRun
+AbtCLanguageBase
+AbtCLanguageRun
+AbtCobolLanguageBase
+AbtCobolLanguageRun
+AbtCommunicationsBase
+AbtCommunicationsRun
+AbtCPICBase
+AbtCPICRun
+AbtDatabaseIbmDb2CliRun
+AbtDatabaseRun
+AbtDatabaseSQLiteRun
+AbtDdeRun
+AbtHllapiBase
+AbtHllapiRun
+AbtMQBase
+AbtMQRun
+AbtNotesBase
+AbtNotesRun
+AbtNtServiceBaseRuntime
+AbtNtServiceRuntime
+AbtObsoleteIbmDatabase
+AbtOleBase
+AbtOleRun
+AbtReportRun
+AbtTCPBase
+AbtTCPRun
+AbtWebRunBase
+AbtWebRunObsolete
+AbtWebRunSmalltalk
+AbtWebSstServer
+AbtWebSstServerUi
+AbtWebWsiBase
+AbtWebWsiServer
+AbtWebWsiServerUi
+AbtXmlBase
+AbtXmlPrimitive
+AbtXmlSerialization
+AbtXmlSerializationBase
+AbtXmlTcpBase
+AbtXmlTcpServer
+AbtXmlServerUi
+ENVY/Composed Output
+ENVY/Image AsyncCallout
+ENVY/Image Base
+ENVY/Image Batch Runtime
+ENVY/Image Compiler
+ENVY/Image CPIC Socket Interface
+ENVY/Image CPIC Transport Support
+ENVY/Image Crypto
+ENVY/Image DDE
+ENVY/Image DM
+ENVY/Image Drap And Drop
+ENVY/Image Embedded Shell Support
+ENVY/Image EW Monetary Support
+ENVY/Image EW R3.0 Compatibility
+ENVY/Image Extended Widgets
+ENVY/Image Graphical User Interface
+ENVY/Image IPC ES-X/MOTIF
+ENVY/Image JSON
+ENVY/Image LDAP
+ENVY/Image Obsolete PI
+ENVY/Image OLE
+ENVY/Image Platform Data Conversion
+ENVY/Image Print Previewer
+ENVY/Image Regex
+ENVY/Image Remote Smalltalk Support
+ENVY/Image SCI
+ENVY/Image SCI Transport Support
+ENVY/Image Socket Framework
+ENVY/Image Socket Transport Support
+ENVY/Image Target Interactive Debug Runtime
+ENVY/Image Target Stack Dump Debug Runtime
+ENVY/Swapper ALL-ALL
+ENVY/Swapper Minimal ALL-ALL
+GF Calendar Goodie IBM/ST
+GF Graph Layout IBM/ST
+GF/ST IBM/ST - Runtime
+Glorp
+GlorpVAPortCliSupportMap
+GlorpVAPortMap
+GlorpVAPortPostloadMap
+IBM Smalltalk, ALL - Headless
+IBM Smalltalk, ALL - UI Run
+IBM Smalltalk, Bootstrap - CFS
+IBM Smalltalk, Bootstrap - Headless
+Javascript Core
+JQuery Core
+OTIML SGML Support
+Platform Portability
+Scriptaculous Core
+Seaside Core
+Seaside REST
+Seaside RSS
+Server Base
+Server CICS Runtime
+Server Common Runtime Base
+Server Smalltalk - Distributed
+Server Smalltalk - HTTP Server
+Server Smalltalk - IIOP Support
+Server Smalltalk - Java RMI Support
+Server Smalltalk - Kernel
+Server Smalltalk - Lightweight Marshaling
+Server Smalltalk - Mail Support
+Server Smalltalk - MQ Communications
+Server Smalltalk - Swapper Marshaling
+Server Smalltalk - TCP Communications
+Server Smalltalk - Web Services
+Server Smalltalk - Web Services HTTP Support
+Server Static DB2 Base
+Server Target Interactive Debug Runtime
+Static DB2 VisualAge Base
+VisualAge Common Builder - Run Headless
+VisualAge Common Builder - Run UI
+VisualAge for Smalltalk - Run Headless
+VisualAge for Smalltalk - Run UI
+Widget Kit/Controls - Runtime
+WindowBuilder Pro - Runtime

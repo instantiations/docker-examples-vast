@@ -1,0 +1,65 @@
+#!/bin/bash
+#--------------------------------------------------------------------------------
+#	Licensed Program Product:
+#	VA Smalltalk on Linux 9.1x86
+#
+#	(C) Copyright Instantiations 1994, 2018
+#
+#--------------------------------------------------------------------------------
+
+if [ -z "$VASTROOT_91x86_ENV_SET" ]
+then
+
+	# Ensure that the environment variables get set only once -- even when
+	# this script gets called recursively.
+	export VASTROOT_91x86_ENV_SET=yes
+
+	export VASTROOT_91x86=${VASTROOT_91x86:-/usr/local/VASmalltalk/91x86}
+	export PATH=$VASTROOT_91x86/bin:$PATH
+
+	#
+	# Setup platform-specific shared library search path
+	#
+	abtslpath=$VASTROOT_91x86/bin
+
+	if [ ! -z "$DB2INSTANCE" ]
+	then
+		eval 'cd ~'${DB2INSTANCE}
+		abtinstpath=`(pwd)`
+		abtslpath=$abtslpath:$abtinstpath/sqllib/lib
+		cd -
+	fi
+
+	if [ ! -z "$ORACLE_HOME" ]
+	then
+		abtslpath=$abtslpath:$ORACLE_HOME/lib
+	fi
+
+	export LD_LIBRARY_PATH=$abtslpath:$LD_LIBRARY_PATH
+	export PATH=$abtslpath:$PATH 
+fi
+
+#
+# Image location logic:
+#
+# 1. If "-i<imagename>" was specified, use it.
+#    NOTE:  -ini:<optionfilename> has been added as a valid parm and
+#           must be accounted for in the following test
+# 2. Otherwise, check for "<shellName>.icx".  If present, use it.
+# 3. Otherwise, default to "image".
+
+IMAGE=""
+IOPTION=0
+
+# NOTE:  VA ST options do not conform to standard Unix syntax since the
+#        parameter MUST be immediately adjacent to the option AND
+#        multicharacter options are supported.  This means that we can
+#        not use getopts to parse the command line!
+for KEY in $*
+do
+  test ${KEY#-i} != $KEY  &&  test ${KEY#-ini:} = $KEY  &&  IOPTION=1
+done
+test  $IOPTION -eq 0  &&  test -r $0.icx  &&  IMAGE="-i$0.icx"
+
+$VASTROOT_91x86/bin/esnx -no_break $IMAGE "$@"
+

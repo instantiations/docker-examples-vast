@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>9.1 Readme</title>
+</head>
+<body>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h1>VA Smalltalk Readme</h1>
+
+<hr />
+<h2><a name="0.1_header_toc"></a>Contents</h2>
+
+<ul>
+	<li><a name="0.1_TOC_1"></a><a href="#0.1_header_1" rel="nofollow noopener noreferrer">Welcome to VA Smalltalk Version 9.1</a></li>
+	<li><a name="0.1_TOC_2"></a><a href="#0.1_header_2" rel="nofollow noopener noreferrer">Late-breaking news, technical tips, and product updates</a></li>
+	<li><a name="0.1_TOC_3"></a><a href="#0.1_header_3" rel="nofollow noopener noreferrer">Version 9.1 files and installation</a>
+	<ul>
+		<li><a name="0.1_TOC_101"></a><a href="#0.1_header_101" rel="nofollow noopener noreferrer">Distribution files</a></li>
+		<li><a name="0.1_TOC_102"></a><a href="#0.1_header_102" rel="nofollow noopener noreferrer">Installing VA Smalltalk</a></li>
+	</ul>
+	</li>
+	<li><a name="0.1_TOC_4"></a><a href="#0.1_header_4" rel="nofollow noopener noreferrer">VA Smalltalk Migration Guide</a></li>
+	<li><a name="0.1_TOC_5"></a><a href="#0.1_header_5" rel="nofollow noopener noreferrer">Corrections and Enhancements</a></li>
+	<li><a name="0.1_TOC_6"></a><a href="#0.1_header_6" rel="nofollow noopener noreferrer">Components and Features</a>
+	<ul>
+		<li><a name="0.1_TOC_10"></a><a href="#0.1_header_10" rel="nofollow noopener noreferrer">Virtual Machine</a></li>
+		<li><a name="0.1_TOC_12"></a><a href="#0.1_header_12" rel="nofollow noopener noreferrer">User Interface</a></li>
+		<li><a name="0.1_TOC_13"></a><a href="#0.1_header_13" rel="nofollow noopener noreferrer">Base</a></li>
+		<li><a name="0.1_TOC_14"></a><a href="#0.1_header_14" rel="nofollow noopener noreferrer">Development Tools</a></li>
+		<li><a name="0.1_TOC_15"></a><a href="#0.1_header_15" rel="nofollow noopener noreferrer">LDAP</a></li>
+		<li><a name="0.1_TOC_16"></a><a href="#0.1_header_16" rel="nofollow noopener noreferrer">Regular Expressions</a></li>
+		<li><a name="0.1_TOC_17"></a><a href="#0.1_header_17" rel="nofollow noopener noreferrer">JSON</a></li>
+		<li><a name="0.1_TOC_18"></a><a href="#0.1_header_18" rel="nofollow noopener noreferrer">UUID</a></li>
+		<li><a name="0.1_TOC_19"></a><a href="#0.1_header_19" rel="nofollow noopener noreferrer">Unicode and Code Pages</a></li>
+		<li><a name="0.1_TOC_20"></a><a href="#0.1_header_20" rel="nofollow noopener noreferrer">Compression Framework</a></li>
+		<li><a name="0.1_TOC_21"></a><a href="#0.1_header_21" rel="nofollow noopener noreferrer">Server Smalltalk (SST)</a></li>
+		<li><a name="0.1_TOC_22"></a><a href="#0.1_header_22" rel="nofollow noopener noreferrer">AbtWaitApp</a></li>
+		<li><a name="0.1_TOC_23"></a><a href="#0.1_header_23" rel="nofollow noopener noreferrer">Asynchronous Queue</a></li>
+	</ul>
+	</li>
+</ul>
+
+<ul>
+	<li><a name="0.1_TOC_24"></a><a href="#0.1_header_24" rel="nofollow noopener noreferrer">Disclaimer</a></li>
+</ul>
+
+<hr />
+<h2><a name="0.1_header_1"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer" target="_blank">Welcome to VA Smalltalk Version 9.1</a></h2>
+
+<p>VA Smalltalk enables software developers to create highly portable, scalable, multi-tier business applications using object-oriented technology. VA Smalltalk allows for incremental and rapid development of new Smalltalk applications. Developers can build and deploy enterprise Web service solutions for dynamic e-business using VA Smalltalk.</p>
+
+<hr />
+<h3>What&#39;s New in V9.1</h3>
+
+<ul>
+	<li>Linux joins the lineup for our&nbsp;new, standards-based 32 &amp;&nbsp;64-bit virtual machines.</li>
+	<li>Platform:
+	<ul>
+		<li>32 &amp; 64-bit Unix Smalltalk Images</li>
+	</ul>
+	</li>
+	<li>Base Libraries
+	<ul>
+		<li>Regular Expressions</li>
+		<li>JSON</li>
+		<li>UUID (v3, v4, v5)</li>
+		<li>High-Performance String&gt;&gt;match:</li>
+		<li>Enhancements to Cross-Platform High-Resolution Timers (AbtWaitApp)</li>
+		<li>Streams auto-detect line endings (no performance loss)</li>
+	</ul>
+	</li>
+	<li>GUI Look and Feel:
+	<ul>
+		<li>Major enhancements to the Linux IDE L&amp;F and experience</li>
+	</ul>
+	</li>
+	<li>Unicode:
+	<ul>
+		<li>Enhanced UTF-8 Handling</li>
+	</ul>
+	Compression
+
+	<ul>
+		<li>All new high-performance codec stream framework with unified API</li>
+		<li>LZ4 Compression Streams</li>
+		<li>Zip Archive Stream (Zip64)</li>
+		<li>ByteArrays and Strings can call any compression algorithm on themselves</li>
+	</ul>
+	</li>
+	<li>Communications
+	<ul>
+		<li>LDAP (OpenLDAP &amp; Windows LDAP API)</li>
+		<li>SST Http Client proxy enhancements and improved code quality&nbsp;</li>
+	</ul>
+	</li>
+	<li>Security:
+	<ul>
+		<li>OpenSSL 1.1.1 Compatibility (TLS 1.3, SHA3, ARIA Cipher)</li>
+		<li>All VA Smalltalk binaries compiled with Address Space Layout Randomization (ASLR)</li>
+		<li>All VA Smalltalk binaries compiled with Data Execution Prevention (DEP)</li>
+	</ul>
+	</li>
+	<li>Deployment:
+	<ul>
+		<li>32 &amp; 64-bit Linux Packagers</li>
+	</ul>
+	</li>
+	<li>Installation:
+	<ul>
+		<li>32 &amp; 64-bit Linux Installers</li>
+	</ul>
+	</li>
+	<li>Development Tools:
+	<ul>
+		<li>Enhanced Monticello Importer</li>
+		<li>New Dark/Solarized Themes for code editors</li>
+		<li>New shortcuts for&nbsp;<span>browse references/hierarchy/</span><span>implementors/senders.</span></li>
+		<li>Mastering ENVY/Developer ScriptManager works with Scintilla now</li>
+		<li>SUnit enhancements</li>
+	</ul>
+	</li>
+	<li>Documentation:
+	<ul>
+		<li>&nbsp;64-bit Linux Updates</li>
+		<li>Updated Migration Guide</li>
+	</ul>
+	</li>
+</ul>
+
+<h2><a name="0.1_header_2"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Late-breaking news, technical tips, and product updates</a></h2>
+
+<p>Please refer to the <a href="http://www.instantiations.com/products/vasmalltalk/index.html" rel="nofollow noopener noreferrer" target="_blank">Instantiations Smalltalk home page</a> for technical information including tips and product updates made after this product release. The web page includes information about what&#39;s included in the release, and how to contact us as well as hints and tips for using and deploying VA Smalltalk.</p>
+
+<p>You can download the latest product updates, as well as product add-ons, from the <a href="http://www.instantiations.com/products/vasmalltalk/download.html" rel="nofollow noopener noreferrer" target="_blank">Instantiations Smalltalk download page</a>.</p>
+
+<hr />
+<h2><a name="0.1_header_3"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer" target="_blank">Version 9.1&nbsp;files and installation</a></h2>
+
+<h3><a name="0.1_header_101"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Distribution files</a></h3>
+
+<p>VA Smalltalk distribution files are divided into development time components and runtime components.</p>
+
+<p>Each VA Smalltalk platform has two downloadable development time components:</p>
+
+<dl>
+	<dt>Product Installer</dt>
+	<dd>The product installer installs the Client and Manager components of the VA Smalltalk product as well as a development IDE setup tool. The Client component contains the VA Smalltalk development IDE. The Manager component contains the VA Smalltalk library (source code repository) file and the EMSRV code used to access the repository file in a team environment.&nbsp;There are two versions of the product installer: one for 32-bit and one for 64-bit installations.</dd>
+	<dt>Documentation Installer</dt>
+	<dd>The documentation installer installs a local copy of the VA Smalltalk documentation onto your workstation.</dd>
+</dl>
+
+<p>Each VA Smalltalk platform has one downloadable run time component:</p>
+
+<dl>
+	<dt>Server Runtime</dt>
+	<dd>This is the runtime support needed for deploying Smalltalk applications developed using VA Smalltalk. There is no formal install program for Server Runtime. You simply use unzip to unpack the runtime files and add your packaged Smalltalk application into the resulting directory structure. You must download and unpack the correct Server Runtime package for your workstation operating system. The files needed to include at runtime are listed in <a href="http://www.instantiations.com/docs/FAQ/wwhelp/wwhimpl/js/html/wwhelp.htm#href=va02016.html" rel="nofollow noopener noreferrer" target="_blank">Redistributable Runtime Files</a>.</dd>
+</dl>
+
+<p>The Linux Product installers come in Debian and RPM formats.</p>
+
+<p>The&nbsp;Server Runtime component for all platforms, are delivered as .zip files. If you do not already have a suitable unzip program, then you can download a no-charge unzip program such as<span>&nbsp;</span><a href="http://www.info-zip.org/pub/infozip/" rel="nofollow noopener noreferrer" target="_blank">Info-ZIP</a>.</p>
+
+<p><strong>Note:</strong><span>&nbsp;</span>The<span>&nbsp;</span><span>gunzip</span><span>&nbsp;</span>program will not work with the VA *.zip files. The VA *.zip files are multi-file archives while<span>&nbsp;</span><span>gunzip</span><span>&nbsp;</span>is only designed to handle single compressed files.</p>
+
+<hr />
+<h3><a name="0.1_header_102"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Installing VA Smalltalk</a></h3>
+
+<h4>Windows</h4>
+
+<p>If you are new to VA Smalltalk, we recommend that you install the documentation locally using the VA Smalltalk Documentation Installer, VASmalltalkDocumentation-9.1.0.exe, for easy reference before you install the VA Smalltalk product.</p>
+
+<p>Run the downloaded VA Smalltalk Product Installer, VASmalltalk-9.1.0x86.exe (32-bit) or VASmalltalk-9.1.0x64.exe. (64-bit)</p>
+
+<p>Complete installation instructions, such as how to set up EMSRV, can be found in the Installation Guide. The <em>Installation Guide </em>can be read online at&nbsp;<a href="http://www.instantiations.com/docs/91/wwhelp/wwhimpl/js/html/wwhelp.htm#href=ig/instgd.html" rel="nofollow noopener noreferrer" target="_blank">Installation Guide</a>,&nbsp;or locally after you run the VA Smalltalk Documentation Installer.</p>
+
+<p>If you are doing a Custom install, to install the Manager on a different machine than the Client(s), we recommend you install the Manager first.</p>
+
+<p>Once you have installed the Manager and the Client, refer to the <em>Installation Guide</em> for further instructions on how to use the Environments tool to configure your environment so you can launch VA Smalltalk.</p>
+
+<p>If you are using the headless installer to install the Manager alone,&nbsp;make sure the directory into which you want to install the manager has been created &nbsp;before starting the &nbsp;headless install. Refer to the <em>Installation Guide</em> for further instructions.</p>
+
+<p>If you are installing on Windows Server:</p>
+<dl><dt>Problem:</dt>
+  <dd>
+    The manager is not installed when&nbsp;installing the product with both client and server portions present (the typical or default installation configuration).</dd>
+    <dt>Workaround:</dt>
+    <dd>Copy %tmp%\Instantiations\VA Smalltalk\9.1\manager\mgr91tmp.dat to &lt;<em>mgrroot</em>&gt; and rename it mgr91.dat. By default, &lt;<em>mgrroot</em>&gt; is C:\ProgramData\Instantiations\VA Smalltalk\9.1\manager. to determine %tmp%, open a command terminal and enter echo %tmp% .</dd>
+</dl>
+<h4>Linux</h4>
+
+<p>If you are new to VA Smalltalk, we recommend you install the documentation locally first, so you have the<span>&nbsp;</span><em>Installation Guide</em><span>&nbsp;</span>in a convenient place.&nbsp;Unzip the downloaded VA Smalltalk Documentation Installer for your Platform and execute&nbsp;sudo ./vainstall&nbsp;in a terminal. Then open a browser on file:///usr/local/VASmalltalk/9.1/help/index.html once the documentation is installed locally. &nbsp;</p>
+
+<p>Installing the product: Unzip the downloaded VA Smalltalk Product Installer for your platform and your preference for 32-bit or 64-bit. Choose whether you would like to install the full standalone product, or just the client or manager configuration. Before running the Product installer, change directory to where vainstall is.</p>
+
+<dl>
+	<dt>Standalone</dt>
+	<dd>Run the Product Installer by executing sudo ./vainstall standalone in a terminal.</dd>
+	<dt>Manager</dt>
+	<dd>Run the Product Installer by executing sudo ./vainstall manager in a terminal.</dd>
+	<dt>Client</dt>
+	<dd>Run the Product Installer by executing sudo ./vainstall client in a terminal.</dd>
+</dl>
+
+<p>Complete installation instructions, such as how to set up EMSRV, can be found in the<span>&nbsp;</span><em>Installation Guide</em>. The<span>&nbsp;</span><em>Installation Guide<span>&nbsp;</span></em>can be read online at&nbsp;<a href="http://www.instantiations.com/docs/91/wwhelp/wwhimpl/js/html/wwhelp.htm#href=ig/instgd.html" rel="nofollow noopener noreferrer" target="_blank">Installation Guide</a>,&nbsp;or locally after you run the VA Smalltalk Documentation Installer.&nbsp;</p>
+
+<p>If you are doing a Custom install, to install the Manager on a different machine than the Client(s), we recommend you install the Manager first.</p>
+
+<p><strong>Note:</strong>&nbsp;There are special steps for installing on Linux which are documented in the<em><span>&nbsp;</span>Installation Guide</em>.</p>
+
+<p>Once you have installed the Manager and the Client, refer to the<span>&nbsp;</span><em>Installation Guide</em><span>&nbsp;</span>for further instructions on how to use the Environments tool to configure your environment so you can launch VA Smalltalk.</p>
+
+<hr />
+<h2><a name="0.1_header_4"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">VA Smalltalk Migration Guide</a></h2>
+
+<p>If you have a version of VisualAge Smalltalk or VA Smalltalk already installed, please refer to the Migration Guide for important information before using VA Smalltalk V9.1. The Migration Guide can be read online at <a href="http://www.instantiations.com/docs/91/wwhelp/wwhimpl/js/html/wwhelp.htm#href=mi/migrate.html" rel="nofollow noopener noreferrer" target="_blank">Migration Guide</a>, as a <a href="http://www.instantiations.com/docs/mi/Migration%20Guide.pdf" rel="nofollow noopener noreferrer" target="_blank">pdf</a> or it can be read locally if you installed local documentation.</p>
+
+<hr />
+<h2><a name="0.1_header_5"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Corrections and Enhancements</a></h2>
+
+<p>This section lists the corrections and enhancements introduced by each release of the VA Smalltalk product.</p>
+
+<hr />
+<h3>Corrections and Product Enhancements in V9.1</h3>
+
+<pre>
+&nbsp; Case&nbsp;&nbsp; Title
+&nbsp; -----&nbsp; ----------------------------------------------------------
+&nbsp;&nbsp;&nbsp;49938&nbsp;New SUnit feature - specify tests to skip
+&nbsp;&nbsp;&nbsp;56400&nbsp;Implement Dirty Icons for Linux/Unix tabbed browsers
+&nbsp;&nbsp;&nbsp;58175&nbsp;LDAP Client Goodie integration into product
+&nbsp;&nbsp;&nbsp;59055&nbsp;Fix break on context menu in unsaved pragma method
+&nbsp;&nbsp;&nbsp;59970&nbsp;AbtTimedWait does not wait on the Linux platform
+&nbsp;&nbsp;&nbsp;62507&nbsp;Fix OSStructure alignmentAt bug which impacts XD Packaging
+&nbsp;&nbsp;&nbsp;62653&nbsp;Add capability to SUnit browser to print Results to the Transcript in Dev Mode only
+&nbsp;&nbsp;&nbsp;62811&nbsp;9.1 OpenSSL Currency: OpenSSL 1.1.1 Compatibility
+&nbsp;&nbsp;&nbsp;62813&nbsp;LZ4 Compression Support
+&nbsp;&nbsp;&nbsp;62819&nbsp;JSON Support
+&nbsp;&nbsp;&nbsp;62859&nbsp;64-bit corrections to MZZipUnzipApp pragmas
+&nbsp;&nbsp;&nbsp;62870&nbsp;GPF accessing TIMESTAMP field using Oracle
+&nbsp;&nbsp;&nbsp;62876&nbsp;va90x64_sw and va90x86_sw are missing sstg.cat
+&nbsp;&nbsp;&nbsp;62915&nbsp;AbtIbmCliDatabaseConnection&gt;&gt;#determineDatabaseConnectionType misreads DB version number
+&nbsp;&nbsp;&nbsp;62941&nbsp;Auto-collapse policy changes break Smalltalk workspace keyword styler
+&nbsp;&nbsp;&nbsp;62944&nbsp;Relax convic path parser to accept trailing path separators
+&nbsp;&nbsp;&nbsp;62945&nbsp;Add -help command line argument to convic, the 32/64-bit conversion tool
+&nbsp;&nbsp;&nbsp;62947&nbsp;Block fetching with ODBC does not work correctly
+&nbsp;&nbsp;&nbsp;62978&nbsp;Add ASLR and DEP compiler switches to virtual machine project
+&nbsp;&nbsp;&nbsp;62979&nbsp;Add ASLR and DEP compiler switches to EMSRV project
+&nbsp;&nbsp;&nbsp;62980&nbsp;Add ASLR and DEP compiler switches to vasslthreads project
+&nbsp;&nbsp;&nbsp;62981&nbsp;Add ASLR and DEP compiler switches to webconn project
+&nbsp;&nbsp;&nbsp;62982&nbsp;Add SM3,SM4 Cryptographic hash functions
+&nbsp;&nbsp;&nbsp;62984&nbsp;Add ARIA AEAD Cipher
+&nbsp;&nbsp;&nbsp;62985&nbsp;Add SHA3 Support
+&nbsp;&nbsp;&nbsp;62988&nbsp;Add SSL/TLS 1.3 Support
+&nbsp;&nbsp;&nbsp;63012&nbsp;NLS Enabler &#39;Next&#39; button fails to advance selection in IBMST image
+&nbsp;&nbsp;&nbsp;63025&nbsp;Recreation guard check in NlsApplicationWarningBrowser&gt;&gt;menuEdit
+&nbsp;&nbsp;&nbsp;63091&nbsp;Add sha512/224 and sha512/256 support to OpenSSL
+&nbsp;&nbsp;&nbsp;63093&nbsp;Update zlib version to 1.2.11
+&nbsp;&nbsp;&nbsp;63100&nbsp;Add support for CwPushButton to show image and text
+&nbsp;&nbsp;&nbsp;63104&nbsp;Fixed ZLib Deflator producing incorrect results on large input
+&nbsp;&nbsp;&nbsp;63105&nbsp;ZLib Deflator and Inflator have been moved to MZZipUnzipApp
+&nbsp;&nbsp;&nbsp;63106&nbsp;Deflator and Inflator now subclass MZCodec to improve reuse
+&nbsp;&nbsp;&nbsp;63108&nbsp;Add gzip compress/decompress API to String and ByteArray
+&nbsp;&nbsp;&nbsp;63109&nbsp;Compression Stream API Unification for GZIP, DEFLATE, LZ4, ZIP
+&nbsp;&nbsp;&nbsp;63136&nbsp;Fixed  browse hierarchy hotkey in code completion box
+&nbsp;&nbsp;&nbsp;63139&nbsp;Change VA Assist default DragNDrop button to platform default
+&nbsp;&nbsp;&nbsp;63147&nbsp;Improve Monticello Importer to not create unnecessary subapps
+&nbsp;&nbsp;&nbsp;63153&nbsp;Add inflate/deflate API to String And ByteArray
+&nbsp;&nbsp;&nbsp;63157&nbsp;Zip Streams do not conform to read/write interface
+&nbsp;&nbsp;&nbsp;63165&nbsp;Improved browse implementors/senders on selection usability
+&nbsp;&nbsp;&nbsp;63166&nbsp;Removed obsolete VA Assist keymappings Ctrl+Shift+[T|F|G]
+&nbsp;&nbsp;&nbsp;63169&nbsp;Fixed Browse Class or Hierarchy from implementors browser if method was private
+&nbsp;&nbsp;&nbsp;63170&nbsp;New browse menu items and shortcuts on current selection in edit menu
+&nbsp;&nbsp;&nbsp;63171&nbsp;Fixed browsing references to scoped pool variables not highlighting
+&nbsp;&nbsp;&nbsp;63172&nbsp;Update Minizip bindings to 1.2
+&nbsp;&nbsp;&nbsp;63177&nbsp;Monticello Importer fails to decode UTF-8 encoded source files
+&nbsp;&nbsp;&nbsp;63185&nbsp;Fix DirectedMessage incorrectly passing second argument in value:value:
+&nbsp;&nbsp;&nbsp;63186&nbsp;Add little-endian and big-endian accessors on OSObjects, ByteArray and String
+&nbsp;&nbsp;&nbsp;63187&nbsp;Fixed abtLittleEndianInt64At accessor
+&nbsp;&nbsp;&nbsp;63190&nbsp;Fixed DirectedMessage crash when executing with less args than expected
+&nbsp;&nbsp;&nbsp;63196&nbsp;Add application sort by needing versioning first to StsApplicationManager
+&nbsp;&nbsp;&nbsp;63199&nbsp;Add Dark Editor Theme
+&nbsp;&nbsp;&nbsp;63200&nbsp;Decouple inspector variables pane from theme engine
+&nbsp;&nbsp;&nbsp;63204&nbsp;New high-performance non-recursive String&gt;&gt;match: implementation
+&nbsp;&nbsp;&nbsp;63213&nbsp;OSTextEdit&gt;&gt;osPosition more accurate when text is selected on Windows
+&nbsp;&nbsp;&nbsp;63214&nbsp;Add Monticello Importer hooks for super group setting/compiler warning level/app suffix
+&nbsp;&nbsp;&nbsp;63217&nbsp;Open Hierarchy view when implementors size is one
+&nbsp;&nbsp;&nbsp;63226&nbsp;Fix #getPostFieldsString doesn&#39;t work for JSON
+&nbsp;&nbsp;&nbsp;63227&nbsp;Fix WASstRequestConverter&gt;&gt;isUrlEncoded: without contentType
+&nbsp;&nbsp;&nbsp;63230&nbsp;Apply Instantiations coding standards to SstHttpClient
+&nbsp;&nbsp;&nbsp;63232&nbsp;Fix SstHttpClient throws DNU in get: when URL string is missing the transport scheme
+&nbsp;&nbsp;&nbsp;63234&nbsp;Add high-performance support for UUID spec v3, v4 and v5
+&nbsp;&nbsp;&nbsp;63236&nbsp;Add Solarized Dark Editor Theme
+&nbsp;&nbsp;&nbsp;63238&nbsp;Grease UTF8 Codecs do not work properly
+&nbsp;&nbsp;&nbsp;63239&nbsp;Monticello Importer fails to parse class comments with exclamation mark
+&nbsp;&nbsp;&nbsp;63240&nbsp;Move next:into:startingAt: into base code
+&nbsp;&nbsp;&nbsp;63241&nbsp;Add Regex support in the base image
+&nbsp;&nbsp;&nbsp;63242&nbsp;Add #cull:* family of methods to BlockContextTemplate and DirectedMessage
+&nbsp;&nbsp;&nbsp;63247&nbsp;Fix Mastering ENVY/Developer ScriptManager to work with Scintilla Editor
+&nbsp;&nbsp;&nbsp;63261&nbsp;Abt Code Page Converter does not ignore UTF-8 BOM when decoding
+&nbsp;&nbsp;&nbsp;63262&nbsp;Abt Code Page Converter was not properly dealing with embedded null chars
+&nbsp;&nbsp;&nbsp;63269&nbsp;Unify UTF-8 conversion in Abt Converted and allow specifying a policy
+&nbsp;&nbsp;&nbsp;63274&nbsp;Linux 64-bit changes to CommonFileSystem
+&nbsp;&nbsp;&nbsp;63280&nbsp;VAST IDE doesn&#39;t find implementors of method names with capital letters
+&nbsp;&nbsp;&nbsp;63285&nbsp;Fix Zlib bindings for Linux 64-bit due to 8byte ulong required
+&nbsp;&nbsp;&nbsp;63288&nbsp;StsHierarchyList&gt;&gt;showing: has async timing bug
+&nbsp;&nbsp;&nbsp;63290&nbsp;Can not browse references to lowercase pool variables
+&nbsp;&nbsp;&nbsp;63293&nbsp;Fix several bugs in AbtCodePageConverter relating to buffer management
+&nbsp;&nbsp;&nbsp;63302&nbsp;Improved TobToolBarsWidget performance on Linux
+&nbsp;&nbsp;&nbsp;63304&nbsp;New SUnit Test menu items from different browsers
+&nbsp;&nbsp;&nbsp;63305&nbsp;Fix Code completion popup request failure on Linux
+&nbsp;&nbsp;&nbsp;63306&nbsp;Error when trying to save/quite image with Seaside adaptor that had error
+&nbsp;&nbsp;&nbsp;63308&nbsp;Linux 64-bit changes to PlatformInterface
+&nbsp;&nbsp;&nbsp;63310&nbsp;Linux 64-bit changes to PlatformFramework
+&nbsp;&nbsp;&nbsp;63311&nbsp;Linux 64-bit changes to PlatformEvents
+&nbsp;&nbsp;&nbsp;63312&nbsp;Unix destroyWidget logic iterates over modifiable collection
+&nbsp;&nbsp;&nbsp;63313&nbsp;Linux 64-bit changes to CommonPrinting
+&nbsp;&nbsp;&nbsp;63314&nbsp;Linux 64-bit changes to CommonWidgets
+&nbsp;&nbsp;&nbsp;63315&nbsp;Linux 64-bit changes to CommonGraphics
+&nbsp;&nbsp;&nbsp;63316&nbsp;Linux 64-bit changes to Abt Hover Help
+&nbsp;&nbsp;&nbsp;63317&nbsp;Linux 64-bit changes to CwDragAndDrop
+&nbsp;&nbsp;&nbsp;63318&nbsp;Fix Enhanced list widget color prompter on Linux
+&nbsp;&nbsp;&nbsp;63327&nbsp;Fix Motif File Dialog dynamic resizing
+&nbsp;&nbsp;&nbsp;63328&nbsp;More modern and consistent Motif theme on Unix
+&nbsp;&nbsp;&nbsp;63329&nbsp;Fix copy/paste on Linux text fields
+&nbsp;&nbsp;&nbsp;63332&nbsp;Fix menu popup flicker on Linux
+&nbsp;&nbsp;&nbsp;63334&nbsp;Use enhanced widgets in StsDebugger for Linux
+&nbsp;&nbsp;&nbsp;63336&nbsp;Improve SUnit to better deal with expectedFailures
+&nbsp;&nbsp;&nbsp;63349&nbsp;Support for dynamic motif 2.3.x lib bindings
+&nbsp;&nbsp;&nbsp;63360&nbsp;Monticello Importer doing wrong assumption of line ending on Linux
+&nbsp;&nbsp;&nbsp;63372&nbsp;Add &quot;Test Loaded Applications&quot; menu entry to Config Map Browser
+&nbsp;&nbsp;&nbsp;63385&nbsp;&quot;Hierarchy&quot; menu entry in SUnit results do NOT auto-select test method on opened browser
+&nbsp;&nbsp;&nbsp;63386&nbsp;Update Seaside tests for 9.1
+&nbsp;&nbsp;&nbsp;63389&nbsp;Several fixes to SUnit results presentation and improve management of unexpected passes
+&nbsp;&nbsp;&nbsp;63397&nbsp;Move SUnit Envy helper methods from VastTeamTestingSupportSUnitApp to SUnit
+&nbsp;&nbsp;&nbsp;63398&nbsp;New ENVY manager opening editions controls in SUnit TestCase
+&nbsp;&nbsp;&nbsp;63437&nbsp;Grease API to write file stream is not closing stream when it should
+&nbsp;&nbsp;&nbsp;63445&nbsp;Replace usage of deprecated asDecimal with asScaledDecimal in AbtMiscSmalltalkParser
+&nbsp;&nbsp;&nbsp;63465&nbsp;Ole stack argument descriptor not 64-bit clean
+&nbsp;&nbsp;&nbsp;63478&nbsp;Increase size of the async queue
+&nbsp;&nbsp;&nbsp;63489&nbsp;Fix ASN1 Integer get/set on Linux64 where long is 8 bytes
+&nbsp;&nbsp;&nbsp;63490&nbsp;Fix manual alignment padding bug in OSSslX509Req for Linux64
+&nbsp;&nbsp;&nbsp;63497&nbsp;Unix incorrectly adjusts source positions in selector identification algorithm
+&nbsp;&nbsp;&nbsp;63499&nbsp;Fix OSAddrInfo&gt;&gt;aiAddrlen on Linux64 - usize must be uint32
+&nbsp;&nbsp;&nbsp;63500&nbsp;Fix SstUnixSocketDemultiplexor&gt;&gt;poll bug in V9.0/V9.1
+&nbsp;&nbsp;&nbsp;63502&nbsp;WkTableWidgetProgrammedDataProfileExample walks back after a cell edited
+&nbsp;&nbsp;&nbsp;63508&nbsp;Improve performance on Linux by avoiding CwBasicWidget&gt;&gt;widgetUnderPointer
+&nbsp;&nbsp;&nbsp;63511&nbsp;Fix colorMap restore in when disconnecting code assist popup
+&nbsp;&nbsp;&nbsp;63516&nbsp;VM GC info should not be printed into console
+&nbsp;&nbsp;&nbsp;63524&nbsp;Remove motif warning from the stdout console on Linux
+&nbsp;&nbsp;&nbsp;63527&nbsp;SstHttpClient proxy capability only works for oneshot operations
+&nbsp;&nbsp;&nbsp;63532&nbsp;Implementors should have precedence over Pools when looking for implementors
+&nbsp;&nbsp;&nbsp;63552&nbsp;AbtWaitApp cleanup and refactoring
+&nbsp;&nbsp;&nbsp;63547&nbsp;Improve #nextLine to work with all known delimiters (Cr, Lf and CrLf)
+&nbsp;&nbsp;&nbsp;63549&nbsp;EsOrderedDictionary keysDo: does not maintain order
+&nbsp;&nbsp;&nbsp;63555&nbsp;Code Assist language providers should not use hashed collections for language list
+&nbsp;&nbsp;&nbsp;63568&nbsp;NlsCatalogBrowser must implement #selectedApplications
+&nbsp;&nbsp;&nbsp;63592&nbsp;Add accessors missing in OSMidlStubMessage
+&nbsp;&nbsp;&nbsp;63596&nbsp;Improve how StsApplicationConfigBrowser handles loaded classes with same name as shadow
+&nbsp;&nbsp;&nbsp;63597&nbsp;Various code assist features can just stop working in certain editor instances
+&nbsp;&nbsp;&nbsp;63601&nbsp;Create indexOfAny APIs in CLDT
+&nbsp;&nbsp;&nbsp;63602&nbsp;Add skipToAny/upToAny APIs to Streams
+&nbsp;&nbsp;&nbsp;63607&nbsp;Scintilla indicator of size 1 char may fail to undraw during text modification
+&nbsp;&nbsp;&nbsp;63624&nbsp;Inflater/Deflater has a 32-bit for totalBytesRead/totalBytesWritten on some platforms
+&nbsp;&nbsp;&nbsp;63626&nbsp;Fix XD Unix packager dumping of byte objects
+&nbsp;&nbsp;&nbsp;63644&nbsp;Fix UNIXEnvironment&gt;&gt;primGetenv: for new FFI and 64-bit
+&nbsp;&nbsp;&nbsp;63647&nbsp;Add a setting to control whether to signal error or not on #asyncQueueOverrun
+&nbsp;&nbsp;&nbsp;63655&nbsp;at:ifAbsentPut: are missing return statements in certain Dictionary impls
+&nbsp;&nbsp;&nbsp;63672&nbsp;Fix UndoManager disconnect from EtWindow during programmatic close window on Linux
+&nbsp;&nbsp;&nbsp;63705&nbsp;SCIINETNTOP has wrong return type:
+&nbsp;&nbsp;&nbsp;63706&nbsp;Unsafe return value usage in SciSocketManager&gt;&gt;inetNtop:addr
+&nbsp;&nbsp;&nbsp;63709&nbsp;Some Tob Toolbar Widgets are missing isManaged check in expose event
+&nbsp;&nbsp;&nbsp;63716&nbsp;Unix Print Support for 64-bit
+&nbsp;&nbsp;&nbsp;63717&nbsp;Modal dialogs showing up behind browsers on Linux
+&nbsp;&nbsp;&nbsp;63748&nbsp;Fix running 64-bit packaged images in big-endian format
+&nbsp;&nbsp;&nbsp;63763&nbsp;Update HLLAPI to match changes to AbtConditionalWait
+&nbsp;&nbsp;&nbsp;63765&nbsp;OSOleInterface contains 32-bit platform functions in a 64-bit converted image
+
+</pre>
+
+<h2><a name="0.1_header_6"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Components and Features</a></h2>
+
+<p>The following sections list some important information about some of the components and features. For the latest product information, please refer to <a href="http://www.instantiations.com/products/vasmalltalk/index.html"  target="_blank">Instantiations Smalltalk web page</a>.</p>
+
+<hr />
+<h3><a name="0.1_header_10"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Virtual Machine</a></h3>
+
+<h4>New 32 and 64-Bit Linux</h4>
+
+<p>Linux joins our latest platforms to be built on the new 32 and 64-bit virtual machines built on modern code generators and technology stack.</p>
+
+<h4>ASLR and DEP</h4>
+
+<p>The virtual machines (and supporting binaries) are built with Address Space Layout Randomization (ASLR) and Data Execution Prevention (DEP) enabled for better security.</p>
+
+<h4>Motif Dynamic&nbsp;Linkage</h4>
+
+<p>The virtual machine now dynamically links to motif on Linux systems.&nbsp;&nbsp;</p>
+
+<hr />
+<h3><a name="0.1_header_12"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">User Interface</a></h3>
+
+<h4>Linux L&amp;F</h4>
+
+<p>While the Linux image was being updated for 64-bit and the newer versions of Motif available on Linux systems, we took the opportunity to make some substantial improvements to the Linux environment in the following areas:</p>
+
+<ul>
+	<li>New Theme</li>
+	<li>Keyboard shortcuts like copy/paste</li>
+	<li>Mousewheel scrolling</li>
+	<li>Code Completion</li>
+	<li>File Dialog</li>
+	<li>Menu Popups</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_13"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Base</a></h3>
+
+<h4>SequenceableCollection</h4>
+
+<ul>
+	<li><span>New APIs - indexOfAny: | indexOfAny:ifAbsent: | indexOfAny:startingAt: | indexOfAny:startingAt:</span><span>ifAbsent:</span></li>
+	<li><span>EsString&gt;&gt;indexOfAny:</span><span>startingAt:ifAbsent: is prim-assisted for String and DBString</span></li>
+</ul>
+
+<h4>String</h4>
+
+<ul>
+	<li>New (well-behaved) implementation in EsString.&nbsp; The old impl would stack-overflow on large string with * patterns and also was hard on the GC</li>
+	<li>New #match:ignoreCase:,&nbsp; New #matchPatternFrom:in:from:ignoreCase:</li>
+	<li>String&gt;&gt;#match: is now a prim call, so performance is very high.</li>
+</ul>
+
+<h4>Streams</h4>
+
+<ul>
+	<li><span>New APIs - skipToAny: | upToAny:</span></li>
+	<li>Auto line-ending detection (cr/lf/crlf) with no performance loss&nbsp;</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_14"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Development Tools</a></h3>
+
+<h4>&nbsp;Browsers and Editor</h4>
+
+<ul>
+	<li><span>Browsing implementors with only one implementor will skip a methods list browser and go directly to opening up a class hierarchy browser</span>.</li>
+	<li>New Dark and Solarized themes for the editors</li>
+	<li>Mastering ENVY/Developer ScriptManager works with Scintilla editor</li>
+	<li>Application Manager supports &quot;Sort Needing Versioning First&quot; so that open editions show at the top of the application names pane. (Choose application names menu -&gt; View -&gt; Sort Needing Versioning First.)</li>
+	<li>New keybindings to browse references/hierarchy/implementors/senders.&nbsp; (See shortcut list in browser top menu -&gt; Edit -&gt; Browser References and friends.)</li>
+</ul>
+
+<h4>SUnit</h4>
+
+<ul>
+	<li>SUnit Test hooks added to browsers for methods, class, applications. For example, right-click an SUnit Test Application and select &quot;Test Application&quot;.&nbsp; The same can be done for test methods and test classes.</li>
+	<li>SUnit deals better with expected failure and unexpected passes.</li>
+	<li>SUnit can print results to the System Transcript.</li>
+	<li>New ways to specify tests to skip.</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_15"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">LDAP</a></h3>
+
+<ul>
+	<li>Supports OpenLDAP on Windows and Linux</li>
+	<li>Supports Windows LDAP API on Windows</li>
+	<li>Now a feature in VA Smalltalk (System Transcript Menu -&gt; Tools -&gt; Load/Unload Features -&gt; ST: LDAP Support)</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_16"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Regular Expressions</a></h3>
+
+<ul>
+	<li>Official support for the excellent port of Regex in VastGoodies</li>
+	<li>Now a feature in VA (System Transcript Menu -&gt; Tools -&gt; Load/Unload Features -&gt; ST: Regex... )</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_17"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">JSON</a></h3>
+
+<ul>
+	<li>Official support for the excellent NeoJSON project</li>
+	<li>Now a feature in VA (System Transcript Menu -&gt; Tools -&gt; Load/Unload Features -&gt; ST: JSON Support)</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_18"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">UUID</a></h3>
+
+<ul>
+	<li>Support for generating version 3, version 4, version 5 UUIDs</li>
+	<li>Used crypto for high quality version 4 UUIDs with a focus on doing this performantly</li>
+	<li>Load Cryptography feature and @see EsUUIDApp</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_19"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Unicode and Code Pages</a></h3>
+
+<h4>AbtCodePageConverter</h4>
+
+<ul>
+	<li>Substantial fixes that really improve all aspects of code page conversion on both Windows and Linux</li>
+	<li>New policy object (AbtCodePageConversionPolicy) to give users more control over how conversion is done</li>
+	<li>Fixed dealing with embedded null chars</li>
+	<li>Fixed UTF-8 BOM when decoding (see policy object)</li>
+	<li>Now Grease UTF8 codecs use enhanced abt code page converter directly which fixes a bunch of issues</li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_20"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Compression Framework</a></h3>
+
+<ul>
+	<li>Unified compression read/write streams API</li>
+	<li>Very high performant double-buffered codec abstract streams</li>
+	<li>Concrete compression streams only need a handful of methods to make them streamable</li>
+	<li>LZ4 Compression: New compression library binding to LZ4 compression algorithm and read/write streams&nbsp;</li>
+	<li>ByteArrays and Strings have compress/decompress APIs.&nbsp; @see methods inflate/deflate, gzipCompress/gzipDecompress, lz4compress/lz4Decompress</li>
+</ul>
+
+<h4>Zip Stream Support</h4>
+
+<ul>
+	<li><span>Reads/Writes Zip archives to memory/sockets/files</span></li>
+	<li><span>Does not require a file descriptor</span></li>
+	<li>I<span>mplements Zip64 extended spec</span></li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_21"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Server Smalltalk (SST)</a></h3>
+
+<ul>
+	<li><span>SstHttpClient refactored to meet Instantiations new coding policy (class comments, method comments, formatting, categorizing, etc.)</span></li>
+	<li><span>Fixed SstHttpClient proxy capability when making multiple calls</span></li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_22"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">AbtWaitApp</a></h3>
+
+<p>This application offers high-resolution timers which work on Linux as well as on Windows.<br />
+The quality of the code was dramatically improved and we made sure they work on all platforms now.</p>
+
+<ul>
+	<li>AbtSleep primitive rewritten to work for Windows and *nix platforms.</li>
+	<li>Platform dependent subapplications removed since they are no longer necessary with new VM implementation of AbtSleep primitive.</li>
+	<li><span>Refactored to meet Instantiations new coding policy (class comments, method comments, formatting, categorizing, etc.)</span></li>
+	<li><span>Refactored AbtConditionalWait to be a proper subclass of AbtTimedWait with a true isKindOf relationship.</span></li>
+	<li><span>New creational helper APIs on AbtConditionalWait</span></li>
+</ul>
+
+<hr />
+<h3><a name="0.1_header_23"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Asynchronous Queue</a></h3>
+
+<p>The async queue on Linux has beenvery problematic. It would not be uncommon to have an &quot;Async Overrun&quot; debugger open simply because a large popup menu was opened.&nbsp; We solved this problem by making the async queue much larger, as well as providing a new default (configurable) policy on how to handle overruns.</p>
+
+<ul>
+	<li><span>Enlarged  async queue</span></li>
+	<li>The new policy is to not raise an error when an async overrun occurs and just drop the events, which are GUI events most of the time.</li>
+	<li>If async events are important to you (perhaps you have special code that posts to the async event queue and dropping it is not an option)&nbsp;then you can set [Process ignoreAsyncQueueOverrun: false]</li>
+</ul>
+
+<hr />
+<h2><a name="0.1_header_24"></a><a href="#0.1_header_toc" rel="nofollow noopener noreferrer">Disclaimer</a></h2>
+
+<p>THIS DOCUMENT IS PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND. INSTANTIATIONS DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE AND MERCHANTABILITY WITH RESPECT TO THE INFORMATION IN THIS DOCUMENT. BY FURNISHING THIS DOCUMENT, INSTANTIATIONS GRANTS NO LICENSES TO ANY PATENTS OR COPYRIGHTS.</p>
+
+<p>(C) Copyright Instantiations Corporation 2005, 2018. All rights reserved.</p>
+
+</body>
+</html>

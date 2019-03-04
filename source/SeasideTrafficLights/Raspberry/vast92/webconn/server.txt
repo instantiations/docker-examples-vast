@@ -1,0 +1,238 @@
+==================================================================================
+
+This file contains instructions and tips for configuring the various web servers
+and placement of WebConn files when using the VA Smalltalk WebConn Web Server Interface. 
+
+==================================================================================
+
+General Configuration
+
+Setting the ABTWSI_BASENAME environment variable on your web server machine allows you
+to define the default filename convention used by the WSI components for configuration
+and log files.  If this variable is not set, the default naming convention is to use 
+filenames starting with the executable name when using CGI, or abtwsi when using the
+server API libraries.  The default directory used, if ABTWSI_BASENAME is not defined, 
+is the current web server working directory.    
+
+For example, if you start the CGI program, abtwsac, from the d:\cgi-bin directory,
+and the ABTWSI_BASENAME environment variable is not set, the default name used for all
+configuration and log files will begin with 'd:\cgi-bin\abtwsac' (for example, 
+d:\cgi-bin\abtwsac.cnf).  If, instead, the ABTWSI_BASENAME environment variable is set
+to 'e:\mystuff\test' before executing abtwsac, the configuration and log file names
+used will begin with e:\mystuff\test (for example, e:\mystuff\test.cnf).
+
+The best way to set the ABTWSI_BASENAME environment variable for each platform is, 
+as follows.  For Windows and OS/2 a SET statement, such as 
+'SET ABTWSI_BASENAME=d:\WsiDir\abtwsi' is used.  For Win/95, this statement should be
+added to your autoexec.bat file.  For Win/NT, the statement should be added as a 
+System environment variable, from the System Properties object on the Control Panel.
+For OS/2, the statement should be added to your config.sys file.  For unix platforms
+an export statement is used, such as 'export ABTWSI_BASENAME=/WsiDir/abtwsi'.
+
+When running any of the WSI interfaces, you will also need to ensure that the common
+WSI shared libraries, such as abtwsc and abtwstt, can be found by your operating
+system.  For Win/95, the location of these files should be added to the PATH statement
+in your autoexec.bat file.  For Win/NT, this information should be added to the PATH 
+System Environment variable, from the System Properties object on the Control Panel.
+For OS/2, this information should be added to the PATH statement in your config.sys
+file.  For unix platforms, a reference to these files can be added to a commonly 
+searched library path such as /usr/lib or a libpath environment variable can be set 
+by using an export statement.  For AIX, the environment variable to set is LIBPATH, 
+for Sun/Solaris it is LD_LIBRARY_PATH, and for HP/UX it is SHLIB_PATH.
+
+
+Configuration Files
+
+Two files needed for all installations are the WSI configuration file and the
+WSI message format file.  The default name for the configuration file is abtwsi.cnf
+and the default name for the message format file is abtwsi.htm.  The filenames for
+these files can be overridden by setting the ABTWSI_BASENAME environment variable, 
+as noted above.
+
+
+Error Logging
+
+For the CGI program, abtwsac, and the Microsoft ISAPI shared library, abtwsam, 
+errors are logged to WSI log file.  The default name for this file is abtwsi.log 
+and can be overridden by setting the ABTWSI_BASENAME environment variable, as 
+noted above.
+
+For the Netscape NSAPI, abtwsan, and IBM ICAPI, abtwsai, shared libraries, errors
+are logged using the web server error log services, only.
+
+==================================================================================
+
+CGI Server Configuration
+
+For CGI, there is no specific server configuration needed beyond that needed
+for any other CGI program.  The CGI executable, abtwsac, should be placed
+in a directory that you have defined on your server for executable CGI programs
+and the configuration and message format files, *.cnf and *.htm, should be placed 
+in the directory described by the ABTWSI_BASENAME environment variable, if defined,
+otherwise place them in the working directory of the CGI program when it is 
+executed.  For the latter case, this is usually the directory where you placed
+the CGI executable, but not always.  You also need to ensure that the WSI shared
+libraries, abtwsc and abtwstt, can be found by your operating system (see 
+above). 
+
+To access your WebConn part via CGI, your URL would look something like:
+
+  http://myServerName/cgi-bin/abtwsac.exe/MyPartName
+
+==================================================================================
+
+IBM Internet Connection Server ICAPI Configuration
+
+To use the ICAPI shared library interface, you will need to add the following lines
+to your httpd.cnf (or httpd.conf) file.  These lines need to be inserted before any 
+other service directive.  A good place to add these is right before the AddType 
+directives for the default Mime types.
+
+  ServerInit d:\cgi-bin\abtwsai.dll:AbtWsiServerInit
+  ServerTerm d:\cgi-bin\abtwsai.dll:AbtWsiServerTerm
+  Service    /abtwsi* d:\cgi-bin\abtwsai.dll:AbtWsiService*
+
+The drive and directory, d:\cgi-bin, should be the directory you copied the WSI 
+executable components to; use the correct name of the ICAPI shared library for 
+your operating system.  The Service directive path, /abtwsi/*, can be any path 
+descriptor that you want your end users to use to invoke your WebConn part.
+You also need to ensure that both the WSI shared library file and the common library 
+files, abtwsc and abtwstt, can be found by your operating system (see above).  The 
+configuration and message format files, *.cnf and *.htm, should be placed in the 
+directory described by the ABTWSI_BASENAME environment variable, if defined, 
+otherwise place them in the working directory of the web server.   
+
+To access your WebConn part via ICAPI, your URL would look something like:
+
+  http://myServerName/abtwsi/MyPartName
+
+==================================================================================
+
+NetScape Server NSAPI Configuration
+
+To use the NSAPI shared library, you will need to add the following lines to 
+your obj.conf file. 
+
+Before any other Init directive, add the following lines:
+
+  Init fn="init-cgi"
+  Init funcs="AbtWsiServerInit,AbtWsiService,AbtWsiSetPathInfo" fn="load-modules" shlib="d:/cgi-bin/abtwsan.dll"
+  Init fn="AbtWsiServerInit"
+
+Before the default Object directive, add the following lines:
+
+  <Object name="abtwsi">
+  ObjectType fn="force-type" type="text/html"
+  Service fn="AbtWsiService"
+  </Object>
+
+In the default Object directive, after the line <Object name="default"> add  
+the following lines:
+
+  NameTrans fn="AbtWsiSetPathInfo" separator="/abtwsi/"
+  NameTrans from="/abtwsi/*" fn="assign-name" name="abtwsi"
+
+In the above examples, the drive and directory, d:/cgi-bin, should be directory you
+copied the WSI executable components to; use the correct name of the NSAPI shared 
+library for your operating system.  The path in the NameTrans directives, /abtwsi/, 
+can be any path descriptor that you want your end users to use to invoke your 
+WebConn part.  The string used in the first entry must be the same as the one used 
+in the second, but without the trailing '*'.  You also need to ensure that the NSAPI 
+shared library and the common libraries, abtwsc, abtwstt, and abtwstn, can be found by
+your operating system (see above).  The configuration and message format files, *.cnf
+and *.htm, should be placed in the directory described by the ABTWSI_BASENAME 
+environment variable, if defined, otherwise place them in the runtime working 
+directory of the web server.  For CGI, you can also change the first Init line to 
+the following, to set the environment dynamically for each CGI invocation:
+
+  Init fn="init-cgi" ABTWSI_BASENAME=d:/cgi-bin/abtwsi
+
+This technique can also be used for setting any other environment variables you need 
+at runtime.  For example, if you're running under AIX and LIBPATH is not being passed 
+through to the CGI program by the server, you can set LIBPATH dynamically so that 
+abtwsac can find it's shared object files (abtwsc.a, abtwstt.so):
+
+  Init fn="init-cgi" ABTWSI_BASENAME=d:/cgi-bin/abtwsi LIBPATH=/usr/mylibs:/otherlibs
+
+To access your WebConn part via NSAPI, your URL would look something like:
+
+  http://myServerName/abtwsi/MyPartName
+
+NOTE:  See Configuration Tips below, for more information on using NSAPI on
+       HP-UX and AIX.
+
+==================================================================================
+
+Microsoft Internet Information Server ISAPI Configuration
+
+To use the ISAPI shared library no specific server configuration is needed beyond
+that needed for any CGI executable program.  The ISAPI shared library, abtwsam, 
+should be placed in a directory that you have defined on your server for executable 
+CGI programs and the configuration and message format files, *.cnf and *.htm, 
+should be placed in the directory described by the ABTWSI_BASENAME environment 
+variable, if defined, otherwise place them in the same directory you placed the 
+ISAPI shared library.  You also need to ensure that the ISAPI shared library, and 
+the common shared libraries, abtwsc and abtwstt, can be found by your operating system
+(see above). 
+
+To access your WebConn part via ISAPI, your URL would look something like:
+
+  http://myServerName/cgi-bin/abtwsam.dll/MyPartName
+
+==================================================================================
+
+Configuration Tips 
+
+  1) Unable to resolve hostname
+
+     If you receive errors complaining that WSI was unable to resolve a hostname
+     in your WSI configuration file or unable to resolve the local host name, 
+     use a dotted-decimal form for the hostnames used on your Transport keywords
+     in your WSI configuration file.
+
+  2) Using the NSAPI interface under HP-UX
+
+     There are potential problems using the standard TCP/IP calls in a multi-threaded
+     Netscape environment on HP-UX.  This is because Netscape uses an internal
+     pseudo-threaded mode on this platform, instead of native threading.  What may 
+     happen is that all other psuedo-threads running may be blocked during a TCP/IP
+     call such as a socket read.  To help overcome this, we have supplied an 
+     additional transport shared library for HP, abtwstn.sl, that uses the Netscape 
+     TCP/IP calls that are supposed to be safe in a psuedo-threaded environment.  You 
+     should use this shared library in place of the standard abtwstt.sl file.  If
+     you still experience blocking problems, it is recommended that you re-configure
+     your Netscape server to be in 1 NSAPI thread per process mode instead of the 
+     default x NSAPI threads per process mode, for this platform.
+
+  3) Using the NSAPI interface under AIX
+
+     As with HP-UX, Netscape servers running AIX use a pseudo-threaded mode instead 
+     of native threading which may cause blocking in certain situations.  Read the 
+     previous problem description for HP-UX for more information.  Unfortunately, the
+     Netscape TCP/IP calls appear to fail on AIX so a replacement transport shared
+     library is not shipped for AIX.  If you experience blocking problems when running, 
+     NSAPI programs on AIX, it is recommended that you re-configure your Netscape 
+     server to be in 1 NSAPI thread per process mode instead of the default x 
+     NSAPI threads per process mode.
+
+  4) Modifying the WSI Error Message Format
+
+     You can modify the format of the WSI error messages to suit your application 
+     by modifying the content of the WSI error format file, abtwsi.htm.  The 
+     contents of this file can be any valid HTML tags.   The specific error description
+     and any additional Verbose information is inserted where the tag 
+
+        #_Insert_Error_Message_Here_#
+
+     is encountered in the text.  You can even leave the error description out
+     of the message returned to your user by leaving this tag out of your WSI errror
+     format file.  The error will still be logged if error logging is enabled.  
+
+  5) Reloading the WSI configuration file
+
+     When running the CGI interface the WSI configuration file is loaded for
+     each invocation.  When running the native server APIs, the WSI configuration
+     file is loaded on time at server initialization.  To reload the configuration
+     file, you must restart your web server.
+
+==================================================================================

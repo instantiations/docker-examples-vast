@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE XmlMappingSpec SYSTEM "abtxmap.dtd" >
+<XmlMappingSpec Name="CustomerMappings">
+<ClassElementMapping ElementTagName="customer" ClassName="AbtXmlSampleCustomer" >
+<AttributeMapping ClassAttribute="firstName"><Attribute>firstName</Attribute>
+</AttributeMapping>
+
+<AttributeMapping ClassAttribute="lastName"><Attribute>lastName</Attribute>
+</AttributeMapping>
+
+<AttributeMapping ClassAttribute="email"><Attribute>email</Attribute>
+</AttributeMapping>
+
+<AttributeMapping ClassAttribute="streetAddress"><Attribute>streetAddress</Attribute>
+</AttributeMapping>
+
+<AttributeMapping ClassAttribute="city"><Attribute>city</Attribute>
+</AttributeMapping>
+
+<AttributeMapping ClassAttribute="state"><Attribute>state</Attribute>
+</AttributeMapping>
+<AttributeMapping ClassAttribute="zip"><Attribute>zip</Attribute>
+</AttributeMapping>
+</ClassElementMapping>
+
+<ClassElementMapping ElementTagName="customerRequest" ClassName="AbtXmlSampleCustomerRequest" >
+<AttributeMapping ClassAttribute="request">
+<Attribute>request</Attribute></AttributeMapping>
+<AttributeMapping ClassAttribute="customer">
+ <SubElement>customer</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+
+<ClassElementMapping ElementTagName="customerResponse" ClassName="AbtXmlSampleCustomerResponse" >
+<AttributeMapping ClassAttribute="response">
+<Attribute>response</Attribute></AttributeMapping>
+<AttributeMapping ClassAttribute="customer">
+ <SubElement>customer</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+</XmlMappingSpec>

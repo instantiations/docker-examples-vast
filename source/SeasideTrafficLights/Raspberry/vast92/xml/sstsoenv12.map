@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!-- Mappings for the SOAP envelope namespace.  These mappings are used during processing of SOAP requests -->
+<!DOCTYPE XmlMappingSpec SYSTEM "abtxmap.dtd" >
+<XmlMappingSpec Name="SoapMappings" NameSpaceURI="http://www.w3.org/2003/05/soap-envelope">
+
+<!-- Mapping for Envelope -->
+<ClassElementMapping ElementTagName="Envelope" ClassName="SstSoapEnvelope">
+<AttributeMapping SetSelector="header:" GetSelector="header">
+	<SubElement>Header</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="body:" GetSelector="body" Required="true">
+	<SubElement>Body</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="encodingStyle:"  GetSelector="encodingStyle">
+	<Attribute>encodingStyle</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="addElement:" >
+	<SubElement>*</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+<!-- Mapping for Body -->
+<ClassElementMapping ElementTagName="Body" ClassName="SstSoapBody">
+<AttributeMapping SetSelector="encodingStyle:" GetSelector="encodingStyle">
+	<Attribute>encodingStyle</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="payload:" GetSelector="payload">
+	<SubElement>*</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+
+<!-- Mapping for Header -->
+<ClassElementMapping ElementTagName="Header" ClassName="SstSoapHeader">
+<AttributeMapping SetSelector="encodingStyle:" GetSelector="encodingStyle">
+	<Attribute>encodingStyle</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="payload:" GetSelector="payload">
+	<SubElement>*</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+<!-- Mapping for Fault  -->
+<ClassElementMapping ElementTagName="Fault" ClassName="SstSoap12Fault">
+<AttributeMapping SetSelector="code:" GetSelector="code">
+	<SubElement>Code</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="reason:" GetSelector="reason">
+	<SubElement>Reason</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="faultActor:" GetSelector="faultActor">
+	<SubElement>Node</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="role:" GetSelector="role">
+	<SubElement>Role</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="detail:" GetSelector="detail">
+	<SubElement>Detail</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+<!-- Mapping for Reason  -->
+<ClassElementMapping ElementTagName="Reason" ClassName="SstSoap12FaultReason">
+<AttributeMapping SetSelector="code:" GetSelector="code">
+	<SubElement>Code</SubElement>
+</AttributeMapping>
+<AttributeMapping SetSelector="text:" GetSelector="text">
+	<SubElement>Text</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+<!-- Mapping for Code  -->
+<ClassElementMapping ElementTagName="Code" ClassName="SstSoap12FaultCode">
+<AttributeMapping SetSelector="value:" GetSelector="value">
+	<Attribute>Value</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="subcode:" GetSelector="subcode">
+	<SubElement>Subcode</SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+<!-- Mapping for Reason  -->
+<ClassElementMapping ElementTagName="Text" ClassName="SstSoap12FaultReasonText">
+<AttributeMapping SetSelector="xmlLang:" GetSelector="xmlLang">
+	<Attribute>xml:lang</Attribute>
+</AttributeMapping>
+<AttributeMapping SetSelector="text:" GetSelector="text">
+	<SubElement></SubElement>
+</AttributeMapping>
+</ClassElementMapping>
+
+</XmlMappingSpec>
