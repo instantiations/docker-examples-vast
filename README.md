@@ -49,7 +49,7 @@ There are lots of areas of interest we would like to investigate and research. B
 
 ## Acknowledgments
 
-- Norbert Schlemmer for the work on getting the examples to work in Raspberry.
+- [Norbert Schlemmer](https://github.com/Noschvie) for the work on getting the examples to work in Raspberry.
 - [Julian Maestri](https://github.com/serpi90) for the initial Dockerfile examples for VA Smalltalk and general help.
 - Github repository layout was generated with [Ba-St Github-setup project](https://github.com/ba-st/GitHub-setup).
 
