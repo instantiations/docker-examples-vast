@@ -1,4 +1,5 @@
-<p align="center"><img src="assets/logos/128x128.png">
+<p align="center">
+<!---<img src="assets/logos/128x128.png">-->
  <h1 align="center">Docker and VA Smalltalk Examples</h1>
   <p align="center">
     Running VA Smalltalk on Docker containers!
@@ -32,6 +33,12 @@ This project serves as a public place where VA Smalltalk users can see and submi
 - Pick of the provided examples.
 - Run Docker `build` and `run` commands
 
+
+## Acknowledgments
+
+- Norbert Schlemmer for the work on getting the examples to work in Raspberry.
+- [Julian Maestri](https://github.com/serpi90) for the initial Dockerfile examples for VA Smalltalk and general help.
+- Github repository layout was generated with [Ba-St Github-setup project](https://github.com/ba-st/GitHub-setup).
 
 
 ## Contributing
