@@ -1,0 +1,13 @@
+LIBRARY abtwsam
+
+EXPORTS
+	AbtWsaCalloc
+	AbtWsaDebugMessage
+	AbtWsaFree
+	AbtWsaGetResponse
+	AbtWsaMalloc
+	AbtWsaSendRequest
+	GetExtensionVersion
+	HttpExtensionProc
+	TerminateExtension
+	DllMain

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE XmlMappingSpec SYSTEM "abtxmap.dtd" [
+	<!ENTITY SchemaNamespace "http://www.w3.org/2001/XMLSchema"  >
+	<!ENTITY AxisNamespace "http://xml.apache.org/xml-soap" >
+	<!ENTITY Soap11EncodingNamespace "http://schemas.xmlsoap.org/soap/encoding/" >
+	]>
+
+<XmlMappingSpec Name="ObjectToTypeSerialization" NameSpaceURI="urn:Vast">
+
+<!--  Base types.  These mappings are used by the schema serializer to resolve types for output.  Each Smalltalk class name
+should have one and only one mapping to ensure predictable serialization  -->
+<ClassTypeMapping ClassName="String" TypeName="string" CreationMethod="abtXmlNoOp"   NameSpaceURI="&SchemaNamespace;" />
+<ClassTypeMapping ClassName="Character" TypeName="string" CreationMethod="abtXmlNoOp"   NameSpaceURI="&SchemaNamespace;" />
+<ClassTypeMapping ClassName="Boolean"  TypeName="boolean" CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;"/>
+<ClassTypeMapping ClassName="True"  TypeName="boolean" CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;"/>
+<ClassTypeMapping ClassName="False"  TypeName="boolean" CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;"/>
+<ClassTypeMapping ClassName="Integer"  TypeName="integer" CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;" />
+<ClassTypeMapping ClassName="SmallInteger" TypeName="int"  CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;" />  
+<ClassTypeMapping ClassName="ScaledDecimal"  TypeName="decimal" CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;" />
+<ClassTypeMapping ClassName="Date" TypeName="date"  CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;"/>
+<ClassTypeMapping ClassName="Time" TypeName="time"  CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;"/>
+<ClassTypeMapping ClassName="DateAndTime" TypeName="dateTime"  CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;"/>
+<ClassTypeMapping ClassName="Float" TypeName="float"  CreationMethod="abtXmlNoOp" NameSpaceURI="&SchemaNamespace;" />
+
+<ClassTypeMapping ClassName="Dictionary"  TypeName="Map" CreationMethod="abtXmlNoOp" NameSpaceURI="&AxisNamespace;"/>
+<ClassTypeMapping  ClassName="OrderedCollection" TypeName="Array" CreationMethod="abtXmlNoOp" NameSpaceURI="&Soap11EncodingNamespace;" />
+<ClassTypeMapping  ClassName="SstSoapArray" TypeName="Array" CreationMethod="abtXmlNoOp" NameSpaceURI="&Soap11EncodingNamespace;" />
+</XmlMappingSpec>
