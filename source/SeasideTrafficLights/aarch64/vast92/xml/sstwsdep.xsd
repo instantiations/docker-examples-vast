@@ -1,0 +1,202 @@
+<xsd:schema 
+	xmlns:tns="urn:VASTWebServiceDeployment600"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:VASTWebServiceDeployment600">
+
+	<xsd:complexType name="actorRolesType">
+		<xsd:sequence>
+			<xsd:element name="actorRole" maxOccurs="unbounded" type="xsd:anyURI" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="chainType">
+		<xsd:sequence>
+			<xsd:element name="handler" minOccurs="0" maxOccurs="unbounded" type="tns:handlerReferenceType"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:NMTOKEN" />
+		<xsd:attribute name="type" type="xsd:QName" />
+		<xsd:attribute name="class" type="tns:smalltalkClass" />
+	</xsd:complexType>	
+			
+   	<xsd:complexType name="containerType">
+		<xsd:sequence>
+			<xsd:element  name="imageComponentUrls" type="tns:imageComponentUrlsType" minOccurs="0" />
+			<xsd:element  name="schemaUrls" type="tns:schemaUrlsType" minOccurs="0" />
+			<xsd:element  name="mappingSpecUrls" type="tns:mappingSpecUrlsType" minOccurs="0" />
+			<xsd:element  name="configuration" type="tns:containerConfigurationType" minOccurs="0" />
+			<xsd:element  name="handlers" type="tns:handlersType" maxOccurs="unbounded" minOccurs="0" />
+    	    <xsd:element  name="serviceUrls" type="tns:serviceUrlsType" minOccurs="0" />
+			<xsd:element  name="extensions" maxOccurs="1"  type="tns:extensionsType" minOccurs="0" />
+    	</xsd:sequence> 		
+		<xsd:attribute name="name" type="xsd:NMTOKEN" use="optional"/>
+		<xsd:attribute name="creationAction" use="optional">
+			<xsd:simpleType>
+            	<xsd:restriction base="xsd:NMTOKEN">
+                 	<enumeration value="CreateNew"/>
+					<enumeration value="CreateIfAbsent"/>
+					<enumeration value="UseExisting"/>
+                </xsd:restriction>
+			</xsd:simpleType>		
+		</xsd:attribute>	
+	 </xsd:complexType>
+
+	<xsd:complexType name="containerConfigurationType">
+		<xsd:sequence>
+			 <xsd:element name="globalNamespace" type="xsd:string" minOccurs="0" /> 
+			 <xsd:element name="defaultServiceInterfaceClass" type="tns:smalltalkClass" minOccurs="0" /> 
+			 <xsd:element name="deploymentManager" 		  type="tns:smalltalkClass" minOccurs="0" /> 
+			 <xsd:element name="messageContextFactory" 	  type="tns:smalltalkClass" minOccurs="0" />
+			 <xsd:element name="handlerFactory"		  type="tns:smalltalkClass" minOccurs="0" />
+			 <xsd:element  name="actorRoles" type="tns:actorRolesType" minOccurs="0" />
+			 <xsd:element name="managers" 			  type="tns:managersType" minOccurs="0" />
+			 <xsd:element name="transportMappings" type="tns:transportMappingsType"  minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="deployment" type="tns:deploymentType" />
+
+	<xsd:complexType name="deploymentType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="container" type="tns:containerType" />
+			<xsd:element minOccurs="0" name="services" type="tns:servicesType" />
+		</xsd:sequence>
+		<xsd:attribute name="targetNamespace" type="xsd:anyURI" />
+	</xsd:complexType>
+
+	<xsd:complexType name="extensionsType">
+		<xsd:sequence>
+			<xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="handlerReferenceType">
+		<xsd:attribute name="name" type="xsd:NMTOKEN" />
+		<xsd:attribute name="class" type="tns:smalltalkClass" />
+		<xsd:attribute name="type" type="xsd:QName" />
+		<xsd:attribute name="creationMethod" type="xsd:string" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="handlersType">
+		<xsd:choice maxOccurs="unbounded">			
+			<xsd:element name="handler" type="tns:handlerReferenceType" />
+			<xsd:element name="chain" type="tns:chainType" />
+			<xsd:element name="operationHandler" type="tns:operationHandlerType" />
+		</xsd:choice>
+		<xsd:attribute name="namespace" use="required" type="xsd:anyURI" />
+	</xsd:complexType>
+
+	<xsd:complexType name="imageComponentUrlsType">
+		<xsd:sequence>
+			<xsd:element name="imageComponentUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:anyURI" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="managerReferenceType">
+		<xsd:attribute name="name" type="xsd:NMTOKEN" />
+		<xsd:attribute name="class" type="tns:smalltalkClass" />
+	</xsd:complexType>
+
+	<xsd:complexType name="managersType">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">	
+			 <xsd:element name="manager" type="tns:managerReferenceType"  />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="mappingSpecUrlsType">
+		<xsd:sequence>
+			<xsd:element name="mappingSpecUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="operationHandlerType">
+		<sequence>
+			<xsd:element name="input" type="tns:handlerReferenceType" minOccurs="0" />
+			<xsd:element name="output" type="tns:handlerReferenceType" minOccurs="0" />
+			<xsd:element name="fault" type="tns:handlerReferenceType" minOccurs="0" />
+		</sequence>
+		<xsd:attribute name="name" type="xsd:NMTOKEN" />
+		<xsd:attribute name="type" type="xsd:QName" />
+		<xsd:attribute name="class" type="tns:smalltalkClass" />
+	</xsd:complexType>
+
+	<xsd:complexType name="operationType">
+		<xsd:attribute name="name" type="xsd:string" />
+		<xsd:attribute name="qName" type="xsd:QName" />
+		<xsd:attribute name="flow" type="xsd:QName" />
+	</xsd:complexType>
+
+	<xsd:complexType name="operationsType">
+		<xsd:sequence>
+			<xsd:element name="operation" minOccurs="0" maxOccurs="unbounded" type="tns:operationType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="providerType">
+		<xsd:sequence>
+			<xsd:any namespace="##other" minOccurs="0" maxOccurs="1" processContents="lax" />
+			<xsd:element name="operations" type="tns:operationsType" />
+		</xsd:sequence>
+		<xsd:attribute name="type" type="xsd:QName" />
+	</xsd:complexType>
+
+	<xsd:complexType name="schemaUrlsType">
+		<xsd:sequence>
+			<xsd:element name="schemaUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="serviceUrlsType">
+		<xsd:sequence>
+			<xsd:element name="serviceUrl" type="xsd:anyURI" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="serviceType">
+		<sequence>
+			<xsd:element name="documentation" type="xsd:anyType" minOccurs="0" />
+			<xsd:element name="serviceInterfaceClass" type="tns:smalltalkClass" minOccurs="0" />
+			<xsd:element name="provider" type="tns:providerType" minOccurs="0" />
+			<xsd:element name="extensions" type="tns:extensionsType" minOccurs="0" />
+		</sequence>	
+		<xsd:attribute name="name" type="xsd:NMTOKEN" use="optional"/>
+		<xsd:attribute name="namespace" type="xsd:anyURI" use="optional"/>	
+	</xsd:complexType>
+
+	<xsd:complexType name="servicesType">
+		<xsd:sequence>
+			<xsd:element name="imageComponentUrls" type="tns:imageComponentUrlsType" minOccurs="0" />
+			<xsd:element  name="schemaUrls" type="tns:schemaUrlsType" minOccurs="0" />
+			<xsd:element  name="mappingSpecUrls" type="tns:mappingSpecUrlsType" minOccurs="0" />
+			<xsd:element  name="wsdlUrls" type="tns:wsdlUrlsType" minOccurs="0" />
+			<xsd:element  name="handlers" type="tns:handlersType" maxOccurs="unbounded" minOccurs="0" />
+    	    <xsd:element  name="service" maxOccurs="unbounded" type="tns:serviceType" minOccurs="0" />
+    	   </xsd:sequence> 				
+	</xsd:complexType>
+
+	<xsd:simpleType name="smalltalkClass">
+		<xsd:annotation>
+		<xsd:documentation>A derived type to enable automatic conversion from an XML string into a Smalltalk class</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:NMTOKEN" />
+	</xsd:simpleType>
+
+	<xsd:complexType name="transportMappingType">
+		<xsd:attribute name="urlScheme" type="xsd:string" use="required"/>
+		<xsd:attribute name="transportScheme" type="xsd:string" use="required"/>	
+	</xsd:complexType>
+
+	<xsd:complexType name="transportMappingsType">
+		<xsd:sequence>
+			<xsd:element name="transportMapping" maxOccurs="unbounded" type="tns:transportMappingType" minOccurs="0" />
+		</xsd:sequence>		
+	</xsd:complexType>
+
+
+	<xsd:complexType name="wsdlUrlsType">
+		<xsd:sequence>
+			<xsd:element name="wsdlUrl" maxOccurs="unbounded" type="xsd:anyURI" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+</xsd:schema>

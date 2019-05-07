@@ -1,0 +1,59 @@
+Instantiations, Inc. 
+Software License Agreement 
+
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE USING THE SOFTWARE. INSTANTIATIONS WILL LICENSE THE SOFTWARE TO YOU ONLY IF YOU FIRST ACCEPT THE TERMS OF THIS AGREEMENT. BY USING THE SOFTWARE YOU AGREE TO THESE TERMS. IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, PROMPTLY RETURN THE UNUSED SOFTWARE TO THE PARTY (EITHER INSTANTIATIONS OR ITS RESELLER) FROM WHOM YOU ACQUIRED IT TO RECEIVE A REFUND OF THE AMOUNT YOU PAID.  
+
+This is a legal agreement between you, the end user, and Instantiations, Inc. ("Instantiations"). VA Smalltalk ("Software") is owned by Instantiations and is protected by copyright law. Upon acceptance of the terms of this License Agreement, your rights and obligations with respect to use of the Software are as follows. These rights are in supplement of U.S. copyright law and the requirements of local laws and treaties.
+
+LICENSE INFORMATION. The Software programs listed below are licensed under the following terms and conditions. 
+ 
+AUTHORIZATION. License is per developer, and it includes one year of upgrades, maintenance and technical support.  The Software may be stored on the primary machine and another machine (Home/Portable Computer), provided that the Software is not in active use on both machines at the same time.
+ 
+COMMERCIAL USE. Instantiations grants you a nonexclusive license to use the Software. You may 1) use the Software to the extent of authorizations you have acquired and 2) make and install copies to support the level of use authorized, providing you reproduce the copyright notice and any other legends of ownership on each copy, or partial copy, of the Software. If you acquire this Software as a program upgrade, your authorization to use the Software from which you upgraded is terminated. You will ensure that anyone who uses the Software does so only in compliance with the terms of this Agreement. You may not transfer your license rights to another party without prior written consent from Instantiations.
+ 
+ACADEMIC USE. Instantiations grants you a nonexclusive license to use the Software. You may 1) install the Software on computers used solely for instructional purposes in your department, college, or specific University campus and 2) make and install copies to support the level of use authorized, providing you reproduce the copyright notice and any other legends of ownership on each copy, or partial copy, of the Software. You will ensure that anyone who uses the Software does so only in compliance with the terms of this Agreement. You may not transfer your license rights to another party without prior written consent from Instantiations. 
+
+EVALUATION. Prior to purchase Instantiations grants you a nonexclusive, nontransferable license to use the Software only for the following purposes. You may 1) use the Software only for internal evaluation, testing or demonstration purposes, on a trial or "try-and-buy" basis and 2) make and install a reasonable number of copies of the Software in support of such use.  The term of this EVALUATION license ends immediately if commercial development commences or 45 days from the initial date downloaded whichever occurs first. The terms of this license apply to each copy you make. You will reproduce the copyright notice and any other legends of ownership on each copy, or partial copy, of the Software. You will 1) maintain a record of all copies of the Software and 2) ensure that anyone who uses the Software does so only for your authorized use and in compliance with the terms of this Agreement. This license begins with your first use of the Software and ends 1) as of the duration or date specified in the documentation accompanying the Software or 2) when the Software automatically disables itself. Unless Instantiations specifies in the documentation accompanying the Software that you may retain the Software (in which case, an additional charge may apply), you will destroy the Software and all copies made of it within ten days of when this license ends.
+ 
+PROOF OF ENTITLEMENT. The Proof of Entitlement for this Software is evidence of your authorization to use this Software and of your eligibility for warranty services, future upgrade program prices (if announced), and potential special or promotional opportunities.
+
+COPYRIGHT. The Software and Documentation are copyrighted by Instantiations, Inc. and are protected by U.S. and international copyright laws. The product contains copyrighted software of Instantiations. All rights reserved. You agree not to remove any Instantiations or other trademarks or copyright notices from the Software or Documentation.
+
+OTHER RESTRICTIONS. You may not disclose, publish, translate, rent, lease, transfer, export or otherwise make available the Software in any form, to any person or entity, except as expressly licensed herein. You may not reverse engineer, decompile or disassemble the Software.
+ 
+RUNTIME RIGHTS AND LIMITATIONS. You (a) cannot use Instantiations or related names, logos or trademarks to market your software without express written permission; and (b) agree to indemnify, hold harmless and defend Instantiations from and against any claims or lawsuits, including attorneys' fees that arise or result from the use or distribution of your software. The license in this section is royalty-free provided that your software application product is created using the Software. 
+
+REDISTRIBUTION INFORMATION. The Software may include files which you may redistribute (in object code form only) for use as part of an application created by you using the Software if the application is dependent upon such file or module. The files and modules you are authorized to redistribute, if any, are listed for the Software in the file "REDIST.TXT" included with the Software. Your authorization to redistribute such files is granted on the following conditions:
+ 
+- Copies of these files and modules are provided 'AS IS' without warranty, representation or condition of any kind, whether express, implied, statutory or otherwise. You are responsible for all technical assistance for your application.
+ 
+- You may use these files and modules only in the development of your applications; they may not be included in any application you create using the Software that provides the same or similar functionality as the Software.
+ 
+- You agree to label each copy of your application with the copyright notices in the form provided for the Software in the "REDIST.TXT" file.
+ 
+- You agree to indemnify Instantiations, its subsidiaries and their suppliers from and against any third party claim arising out of the use or distribution of your application.
+ 
+- You agree not to use any name or trademarks of Instantiations or its subsidiaries in connection with the marketing of your applications without Instantiations' prior written consent.
+ 
+- You agree to prohibit the recipient from copying (except for backup purposes), transferring, reverse assembling, reverse compiling, or otherwise translating the files and modules except as specifically permitted by law and without the possibility of a contractual waiver.
+
+REDISTRIBUTION OF CLASSES AND METHODS. When you create an application using the Software, you will incorporate certain classes and methods from the Software's class libraries into your application, and you may redistribute (in object code form only) and include certain of these classes and methods. The applications that contain the classes and methods you are authorized to redistribute, if any, are listed for the Software in the file "REDIST.TXT" included with the Software. Your authorization to redistribute such classes and methods is granted on the following conditions:
+ 
+- Copies of these classes and methods are provided 'AS IS' without warranty, representation or condition of any kind, whether express, implied, statutory or otherwise. You are responsible for all technical assistance for your application.
+ 
+- You may use these classes and methods only in the development of your applications; they may not be included in any application you create using the Software that provides the same or similar functionality as the Software.
+ 
+- You agree to indemnify Instantiations, its subsidiaries and their suppliers from and against any third party claim arising out of the use or distribution of your application.
+ 
+- You agree not to use any name or trademarks of Instantiations or its subsidiaries in connection with the marketing of your applications without Instantiations' prior written consent.
+ 
+- You agree to prohibit the recipient from copying (except for backup purposes), transferring, reverse assembling, reverse compiling, or otherwise translating the classes and methods except as specifically permitted by law and without the possibility of a contractual waiver.
+ 
+Your right to redistribute hereunder does not include the right to redistribute all of the classes and methods found in the VA Smalltalk development environment. For example, you are not permitted to redistribute classes and methods from the implementation of the VA Smalltalk development environment or from its tools and utilities.
+
+IN NO EVENT SHALL INSTANTIATIONS BE LIABLE FOR ANY LOSS OF PROFIT OR ANY OTHER DAMAGE, INCLUDING BUT NOT LIMITED TO SPECIAL, INCIDENTAL, CONSEQUENTIAL OR OTHER DAMAGES. THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. INSTANTIATIONS SPECIFICALLY DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. INSTANTIATIONS DOES NOT WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE.
+
+GOVERNING LAW. This Agreement shall be governed by the laws of the State of Washington, without regard to conflict of laws principles. This Agreement may only be modified by a written document signed by the party or parties to be bound. Except as may be specified in such a written agreement, this is the entire agreement between you and Instantiations and all other terms are rejected. You agree not to use, ship, or export the Software in violation of law. US Government Restricted Rights. If provided to the US Government, the Software is provided with RESTRICTED RIGHTS. Use, duplication or disclosure by the US Government is subject to restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Software clause at DEARS 252.227-7013 or subparagraphs (c)(1) and (2) of the Commercial Computer Software Restricted Rights clause at 48 FR 52.227-19, as applicable and as modified herein.
+
+ENTIRE AGREEMENT. You agree that this Agreement expresses the entire understanding between you and Instantiations, Inc., and supersedes all other licenses, communications, oral or written, relating to the Software.
+COPYRIGHT INSTANTIATIONS, INC. 1997-2018

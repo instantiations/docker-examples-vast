@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--  This file contains mappings for the well-known java schema "http://xml.apache.org/xml-soap"  -->
+<!DOCTYPE XmlMappingSpec SYSTEM "abtxmap.dtd" >
+<XmlMappingSpec NameSpaceURI="http://xml.apache.org/xml-soap" Name="JavaTypeMappings">
+		 <ClassTypeMapping TypeName="Map" Id="Map" ClassName="Dictionary">
+			 <AttributeMapping SetSelector="abtXmlAddAll:" GetSelector="abtXmlElements">
+		 			<SubElement>item</SubElement>
+		 	  </AttributeMapping>
+		 </ClassTypeMapping>
+		 <ClassElementMapping ElementTagName="item" ClassName="Association" ParentId="Map" />
+	
+		 <ClassTypeMapping TypeName="Vector" Id="Vector" ClassName="OrderedCollection">
+			<AttributeMapping SetSelector="addAll:" GetSelector="yourself">
+		 		 		 <SubElement>item</SubElement>
+		 	 </AttributeMapping>
+		 </ClassTypeMapping>		
+</XmlMappingSpec>

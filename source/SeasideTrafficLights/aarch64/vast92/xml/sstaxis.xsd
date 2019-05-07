@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?> <schema 
+  xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:tns="http://xml.apache.org/xml-soap" 
+  targetNamespace="http://xml.apache.org/xml-soap">
+<complexType name="Vector">
+<sequence>
+<element name="item" minOccurs="0" maxOccurs="unbounded" type="anyType" />
+</sequence>
+</complexType>
+<complexType name="Map">
+<sequence>
+<element name="item" minOccurs="0" maxOccurs="unbounded">
+<complexType>
+<sequence>
+<element name="key" type="anyType" /> 
+<element name="value" type="anyType" /> 
+</sequence>
+</complexType>
+</element>
+</sequence>
+</complexType>
+<complexType name="Hashtable">
+<complexContent>
+<extension base="tns:Map">
+</extension>
+</complexContent>
+</complexType>
+</schema>
+

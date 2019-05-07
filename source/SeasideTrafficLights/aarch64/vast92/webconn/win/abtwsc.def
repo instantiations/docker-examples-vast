@@ -1,0 +1,23 @@
+LIBRARY abtwsc
+
+EXPORTS
+	AbtWscAddProperty
+	AbtWscAddTimestamp
+	AbtWscAddToString
+	AbtWscAllocateTransaction
+	AbtWscCreateProperty
+	AbtWscEnd
+	AbtWscError
+	AbtWscFindProperty
+	AbtWscFormatHtmlError
+	AbtWscFreeTransaction
+	AbtWscGetResponse
+	AbtWscInit
+	AbtWscLoadConfig
+	AbtWscMatchWildcardString
+	AbtWscResetTransport
+	AbtWscSendRequest
+	AbtWscSetStatus
+	AbtStricmp
+	AbtStrnicmp
+	Config
