@@ -17,7 +17,7 @@ services:
   balancer:
     image: traefik:v1.7
     # To see all available  command line options: docker run --rm traefik:v1.7 --help | less
-    command: --docker --docker.swarmmode=true --retry --loglevel=WARN
+    command: --docker --docker.swarmmode --retry --loglevel=WARN
     ports:
       - "80:80"
     volumes:
