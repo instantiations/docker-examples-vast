@@ -9,13 +9,17 @@ services:
   seaside:
     image: seaside-debian-slim
     deploy:
-      replicas: 4
+      replicas: 10
       labels:
         traefik.port: 7777
         traefik.frontend.rule: "HostRegexp:{catchall:.*}"
         traefik.backend.loadbalancer.stickiness: "true"
   balancer:
     image: traefik:v1.7
+    # The webserver should only load on manager nodes
+    deploy:
+      placement:
+        constraints: [node.role == manager]
     # To see all available  command line options: docker run --rm traefik:v1.7 --help | less
     command: --docker --docker.swarmmode --retry --loglevel=WARN
     ports:
