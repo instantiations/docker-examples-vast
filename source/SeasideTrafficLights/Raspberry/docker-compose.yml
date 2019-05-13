@@ -1,24 +1,29 @@
 # To start it up.
-# ./startSwarm.sh
+# docker stack deploy --compose-file=docker-compose.yml seaside-debian-slim
 
 # To stop it
-# ./stopSwarm.sh
+# docker stack rm seaside-debian-slim
 
 version: '3'
 services:
   seaside:
     image: seaside-debian-slim
+    environment:
+      TZ: America/New_York
+      SEASIDE_PORT: 7777
     deploy:
       replicas: 10
       labels:
         traefik.port: 7777
         traefik.frontend.rule: "HostRegexp:{catchall:.*}"
         traefik.backend.loadbalancer.stickiness: "true"
+    volumes:
+      - ${SCRIPT_DIR}/log:/opt/log
   balancer:
     image: traefik:v1.7
+    # The webserver should only load on manager nodes
     deploy:
       placement:
-        # The webserver should only load on manager nodes
         constraints: [node.role == manager]
     # To see all available  command line options: docker run --rm traefik:v1.7 --help | less
     command: --docker --docker.swarmmode --retry --loglevel=WARN
@@ -27,4 +32,4 @@ services:
     volumes:
       # Required because of docker backend, so traefik can get docker data.
       - /var/run/docker.sock:/var/run/docker.sock:ro
-
+      - ${SCRIPT_DIR}/log:/opt/log
