@@ -18,7 +18,7 @@ services:
         traefik.frontend.rule: "HostRegexp:{catchall:.*}"
         traefik.backend.loadbalancer.stickiness: "true"
     volumes:
-      - ${SCRIPT_DIR}/log:/opt/log
+      - /var/log/docker-logs:/opt/log
   balancer:
     image: traefik:v1.7
     # The webserver should only load on manager nodes
@@ -32,4 +32,3 @@ services:
     volumes:
       # Required because of docker backend, so traefik can get docker data.
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${PWD}/log:/opt/log
