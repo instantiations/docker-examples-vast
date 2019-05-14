@@ -32,4 +32,4 @@ services:
     volumes:
       # Required because of docker backend, so traefik can get docker data.
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${SCRIPT_DIR}/log:/opt/log
+      - ${PWD}/log:/opt/log
