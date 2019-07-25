@@ -10,17 +10,14 @@ LABEL description="VAST SeasideTrafficLight example"
 # docker run -e TZ=America/New_York --mount type=bind,source="$(pwd)",target=/opt/log -p 7777:7777 seaside-alpine
 
 # Install generic dependencies
-RUN apk --update add --no-cache openssl-dev
-
-# Install Dependencies
-# RUN apk --update add --no-cache libc6-compat  
+RUN apk --update add --no-cache openssl-dev curl
 
 # Install Dependencies
 RUN apk --no-cache add ca-certificates wget \
 	&& wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
-	&& wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-2.29-r0.apk \
-	&& wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-bin-2.29-r0.apk \
-	&& wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-i18n-2.29-r0.apk \
+	&& wget https://github.com/yangxuan8282/alpine-pkg-glibc/releases/download/2.27-r0/glibc-2.27-r0.apk \
+	&& wget https://github.com/yangxuan8282/alpine-pkg-glibc/releases/download/2.27-r0/glibc-bin-2.27-r0.apk \
+	&& wget https://github.com/yangxuan8282/alpine-pkg-glibc/releases/download/2.27-r0/glibc-i18n-2.27-r0.apk \
 	&& apk add glibc-bin-2.29-r0.apk glibc-i18n-2.29-r0.apk glibc-2.29-r0.apk
 
 	
