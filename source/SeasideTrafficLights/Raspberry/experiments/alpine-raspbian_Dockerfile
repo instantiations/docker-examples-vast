@@ -25,8 +25,8 @@ RUN apk --no-cache add ca-certificates wget \
 RUN rm -rf /var/cache/apk/* 
 	
 # Generate locales	
-# RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8 \
-#	&& /usr/glibc-compat/bin/localedef -i en_US -f ISO-8859- en_US.ISO-8859-1
+RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8 \
+	&& /usr/glibc-compat/bin/localedef -i en_US -f ISO-8859-1 en_US.ISO-8859-1
 	
 
 # set working directory
