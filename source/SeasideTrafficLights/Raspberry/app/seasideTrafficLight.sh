@@ -11,6 +11,10 @@ export LANG=en_US.iso88591; export LANGUAGE=en_US.iso88591; export LC_ALL=en_US.
 
 export VAST_ROOT="/opt/vast92"
 export LD_LIBRARY_PATH="${VAST_ROOT}/bin:$LD_LIBRARY_PATH"
+
+
+echo "PATH: $PATH"
+echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 $VAST_ROOT/bin/esnx -no_break -msd -mcd -i./seasideTrafficLight-unix.icx -ini:./seasideTrafficLight-unix.ini
 
 cp *.sdf /opt/log/

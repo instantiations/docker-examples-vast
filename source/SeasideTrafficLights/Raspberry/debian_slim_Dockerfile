@@ -1,4 +1,4 @@
-FROM debian:9-slim
+FROM debian:buster-slim
 
 LABEL version="0.2.0"
 LABEL maintainer="mpeck@instantiations.com"
