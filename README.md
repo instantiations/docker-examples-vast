@@ -34,10 +34,14 @@ This project serves as a public place where VA Smalltalk users can see and submi
 - Clone this repository
 - Pick of the provided examples.
 - Run the Docker `build` and `run` commands that can be found in each `Dockerfile`
-- Blog posts to get you started:
+- Read blog posts:
   - [Getting started with Docker and Smalltalk!](https://dev.to/martinezpeck/getting-started-with-docker-and-smalltalk-4po1)
   - [Step 2: Single-node Docker Swarm and Smalltalk](https://dev.to/martinezpeck/step-2-single-node-docker-swarm-and-smalltalk-46i0)
   - [Docker Swarm cloud on a ARM64 DIY SBC cluster running a Smalltalk webapp](https://dev.to/martinezpeck/docker-swarm-cloud-on-a-arm64-diy-sbc-cluster-running-a-smalltalk-webapp-9l1)
+  - [Deploying VASmalltalk on Amazon AWS ARM servers](https://dev.to/martinezpeck/deploying-vasmalltalk-on-amazon-aws-arm-servers-aan)
+- Watch presentations and videos:
+  - ["Improving VASmalltalk deployment, availability and scalability with Docker" at ESUG 2019](https://youtu.be/phQnG4wX9j0)
+  - ["Improving VASmalltalk deployment, availability and scalability with Docker" at Smalltalks 2019](https://youtu.be/XtwWQ75VmkM)
 
 
 ## Experiments already run

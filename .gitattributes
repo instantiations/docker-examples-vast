@@ -1,1 +1,6 @@
-*.st linguist-language=Smalltalk
+# inform linguist that files with these extensions are indeed smalltalk files
+*.st text eol=crlf linguist-language=Smalltalk
+*.project text eol=crlf
+*.properties text eol=crlf
+*.configmaps text eol=crlf
+*.dat binary

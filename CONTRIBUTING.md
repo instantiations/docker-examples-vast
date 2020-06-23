@@ -10,7 +10,7 @@ You can report issues [here](https://github.com/vasmalltalk/docker-examples/issu
 ## Contributing Code
 - This project is MIT licensed, so any code contribution MUST be under the same license.
 - This project uses [Semantic Versioning](http://semver.org/), so keep it in mind when you make backwards-incompatible changes. If some backwards incompatible change is made the major version MUST be increased.
-- The `release-candidate` branch contains the latest changes and should always be in a releasable state.
+- The `master` branch contains the latest changes and should always be in a releasable state.
 - Feel free to send pull requests or fork the project.
 - Code contributions without test cases have a lower probability of being merged into the main branch.
 
