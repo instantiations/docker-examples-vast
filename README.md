@@ -1,6 +1,6 @@
 <p align="center">
 <!---<img src="assets/logos/128x128.png">-->
- <h1 align="center">Docker and VA Smalltalk Examples</h1>
+ <h1 align="center">Docker and VAST Platform (VA Smalltalk) Examples</h1>
   <p align="center">
     Running VA Smalltalk on Docker containers!
     <!---
