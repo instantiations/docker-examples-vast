@@ -1,0 +1,36 @@
+FROM debian:9-slim
+
+LABEL version="0.2.0"
+LABEL maintainer="mpeck@instantiations.com"
+LABEL description="VAST SeasideTrafficLight example"
+
+
+# Comment build and run commands
+# docker build -f ./debian_slim_Dockerfile -t seaside-debian-slim .
+# docker run -e TZ=America/New_York --mount type=bind,source="$(pwd)/log/",target=/opt/log -p 7777:7777 seaside-debian-slim
+
+
+# Install Dependencies
+RUN apt-get update \
+	&& apt-get install --assume-yes --no-install-recommends libc6 libssl-dev locales curl \
+	&& apt-get clean \
+    && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && echo en_US.ISO-8859-1 ISO-8859-1 >> /etc/locale.gen \
+    && locale-gen
+
+# Add a HEALTHCHECK in case the process (VA Smalltalk) is running,
+# yet, the webserver is not responding. In this case we exit the 
+# container and with the restart policy a new container will be started
+HEALTHCHECK CMD curl --fail "http://localhost:${SEASIDE_PORT}/trafficlight" || exit 1
+
+# set working directory
+WORKDIR /opt/app
+
+ADD ./vast92 /opt/vast92
+ADD ./app /opt/app
+
+RUN mkdir /opt/log
+
+EXPOSE 7777
+
+CMD ["./seasideTrafficLight.sh"]

@@ -1,0 +1,48 @@
+FROM alpine:latest
+
+LABEL version="0.2.0"
+LABEL maintainer="mpeck@instantiations.com"
+LABEL description="VAST SeasideTrafficLight example"
+
+
+# Comment build and run commands
+# docker build -f ./alpine-raspbian_Dockerfile -t seaside-alpine .
+# docker run -e TZ=America/New_York --mount type=bind,source="$(pwd)/log/",target=/opt/log -p 7777:7777 seaside-alpine
+
+# Install generic dependencies
+RUN apk --update add --no-cache openssl-dev curl
+
+# Install Dependencies
+RUN apk --no-cache add ca-certificates wget \
+	&& wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
+	&& wget https://github.com/yangxuan8282/alpine-pkg-glibc/releases/download/2.27-r0/glibc-2.27-r0.apk \
+	&& wget https://github.com/yangxuan8282/alpine-pkg-glibc/releases/download/2.27-r0/glibc-bin-2.27-r0.apk \
+	&& wget https://github.com/yangxuan8282/alpine-pkg-glibc/releases/download/2.27-r0/glibc-i18n-2.27-r0.apk \
+	&& apk add  --allow-untrusted glibc-bin-2.27-r0.apk glibc-i18n-2.27-r0.apk glibc-2.27-r0.apk
+
+	
+# Cleanup 
+RUN rm -rf /var/cache/apk/* 
+RUN rm -rf /*.apk
+	
+# Generate locales	
+RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8 \
+	&& /usr/glibc-compat/bin/localedef -i en_US -f ISO-8859-1 en_US.ISO-8859-1
+
+# Add a HEALTHCHECK in case the process (VA Smalltalk) is running,
+# yet, the webserver is not responding. In this case we exit the 
+# container and with the restart policy a new container will be started
+HEALTHCHECK CMD curl --fail "http://localhost:${SEASIDE_PORT}/trafficlight" || exit 1
+	
+
+# set working directory
+WORKDIR /opt/app
+
+ADD ./vast92 /opt/vast92
+ADD ./app /opt/app
+
+RUN mkdir /opt/log
+
+EXPOSE 7777
+
+#CMD ["./seasideTrafficLightAlpine.sh"]

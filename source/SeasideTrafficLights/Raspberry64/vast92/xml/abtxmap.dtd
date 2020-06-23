@@ -1,0 +1,58 @@
+<!-- 8/30/00 -  Added 'Required' attribute to the AttributeMapping.
+	Use this attribute to qualify attributes that MUST be present in the
+	XML in order to successfully map an object.  The 'required' attribute
+	is not used by the VisualAge code, but it may be used by user exception
+	handlers to see if a missing attribute is required. 
+	8/30/00 -  Added 'NameSpaceURI' to ClassElementMapping/AttributeMapping
+	2/9/01 - Added 'NameSpaceURI' to XmlMappingSpec.  This will enable child class element mappings
+	to 'inherit' their namespace from the mapping spec when desired 
+	3/20/01 Adding 'Id' and 'ParentId' to ClassElementMapping to resolve case where same tag
+	is used in different contexts.
+	9/17/01 Adding 'GetSelector' and 'SetSelector' to the AttributeMapping element.  This allows mapping
+	to occur for classes that do NOT have interface specifications.  
+	1/7/02 Adding 'ObjectToStringConversionMethod'.  Use this setting to specify an instance method for
+	converting an object to suitable XML string.  This is useful when the same object can have multiple
+	XML representations.
+	02/11/02 Adding 'ClassTypeMapping' for clarity.  During mapping, a class/type mapping can be used to resolve
+	an object mapping using a schema type.
+	07/01/02 Adding 'CreationMethod' to type mapping.  This allows user to specify a specific method to use when instantiating
+	the mapped class.  The default 'CreationMethod' is #new.
+	-->
+
+<!ELEMENT XmlMappingSpec ((ClassElementMapping* | ClassTypeMapping*)* | (ClassTypeMapping* | ClassElementMapping*)*)>
+<!ATTLIST XmlMappingSpec
+	Name NMTOKEN #IMPLIED
+	NameSpaceURI CDATA #IMPLIED>
+
+ <!ENTITY % ClassMappingAttributes 'Id ID #IMPLIED
+	CreationMethod NMTOKEN #IMPLIED
+	ParentId  IDREF #IMPLIED
+	NameSpaceURI CDATA #IMPLIED
+	ClassName NMTOKEN #REQUIRED' >
+
+<!ELEMENT ClassElementMapping (AttributeMapping)*>
+<!ATTLIST ClassElementMapping 
+	ElementTagName NMTOKEN #REQUIRED
+	%ClassMappingAttributes; >
+
+<!ELEMENT ClassTypeMapping (AttributeMapping)*>
+<!ATTLIST ClassTypeMapping 
+	TypeName NMTOKEN #REQUIRED
+	%ClassMappingAttributes; >	
+
+<!ELEMENT AttributeMapping (Attribute | (SubElement, Attribute?)) >
+<!ATTLIST AttributeMapping
+	ClassAttribute NMTOKEN #IMPLIED
+	GetSelector NMTOKEN #IMPLIED
+	SetSelector NMTOKEN #IMPLIED
+	AttributeClassCreationMethod NMTOKEN #IMPLIED
+	StringConversionMethod NMTOKEN #IMPLIED
+	ObjectToStringConversionMethod NMTOKEN #IMPLIED
+	NameSpaceURI CDATA #IMPLIED
+	Required (true | false) "false" >
+
+<!ELEMENT Attribute (#PCDATA) >
+<!ELEMENT SubElement (#PCDATA) >
+<!ATTLIST SubElement
+	Key NMTOKEN #IMPLIED>
+

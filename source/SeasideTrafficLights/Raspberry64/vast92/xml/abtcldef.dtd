@@ -1,0 +1,31 @@
+<!-- 8/30/00 Adding basic information for ActionSpec  -->
+
+<!ELEMENT Model (ClassDefinition)*>
+
+<!ENTITY % FeatureSpec '(AttributeSpec | ActionSpec | EventSpec)'>
+
+<!ELEMENT ClassDefinition InterfaceSpec>
+<!ATTLIST ClassDefinition
+	Name NMTOKEN #REQUIRED>
+
+<!ELEMENT InterfaceSpec %FeatureSpec;*>
+
+<!ELEMENT AttributeSpec EMPTY>
+<!ATTLIST AttributeSpec
+	Name NMTOKEN #REQUIRED
+	Class  NMTOKEN #REQUIRED
+	GetSelector NMTOKEN #IMPLIED
+	SetSelector NMTOKEN #IMPLIED>
+
+<!ELEMENT ActionSpec (ParameterSpec)* >
+<!ATTLIST ActionSpec
+	Name NMTOKEN #REQUIRED
+	Selector  NMTOKEN #REQUIRED>
+
+<!ELEMENT EventSpec EMPTY>
+
+<!ELEMENT ParameterSpec EMPTY>
+<!ATTLIST ParameterSpec
+	Name NMTOKEN #REQUIRED
+	Type  NMTOKEN #REQUIRED
+	DefaultValue CDATA #IMPLIED>

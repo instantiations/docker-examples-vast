@@ -1,0 +1,134 @@
+#----------------------------------------------------------------
+# Sample configuration file for VA Smalltalk Webconn Web Server Interface 
+#
+# This file must be able to be found via th ABTWSI_BASENAME environment
+# variable or placed in the web server current working directory.
+#
+# Note: There must be at least one each Transport and Link entries
+#       in this file!
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+# format of each non-blank, non-comment line should be
+#
+#    keyword [space] keyword-specific-info
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+# keyword: Transport
+#
+# The format for each line beginning with 'transport' is:
+#
+#  Transport transportName [space] transportLib [space] transport-specific info
+#
+# Where:
+#
+#   transportName specifies the name to refer to this transport entry.
+#
+#   transportLib specifies the name of the shared library to use for
+#   this transport type.
+#
+#   transport-specific info are the specific parameters for each transport type.
+#   For the TCP/IP transport protocol, the transport-specific info should be:
+#
+#    hostname [space] port
+#
+#   The hostname may be specified as '-' which indicates to use the
+#   current machine.
+#
+# Examples:
+#
+#   Transport TCP abtwstt.dll - 8081
+#   Transport MyTCP abtwstt.dll www.ibm.com 8088
+#----------------------------------------------------------------
+
+Transport TCP abtwstt.dll - 8081
+
+#----------------------------------------------------------------
+# keyword: Link
+#
+# The format for each line beginning with 'Link' is:
+#
+#   Link pathInfo transportName
+#
+# Where:
+#
+#   pathInfo specifies the contents of the PATH_INFO variable when
+#   the abtwsi program is run.  A trailing  asterisk, '*', may be
+#   used as a wildcard for matching a partial PATH_INFO.  A single
+#   asterisk is used to match all values.  If multiple Link statements
+#   match a particular pathInfo, only the last matching Link
+#   statement is used.
+#
+# Examples:
+#   Link * TCP
+#   Link /MyCGI* MyTCP
+#   Link /MyCGI/test/* testTCP
+#----------------------------------------------------------------
+
+Link * TCP
+
+#----------------------------------------------------------------
+# keyword: Verbose (optional)
+#
+# The format for each line beginning with 'Verbose' is:
+#
+#   Verbose On | Off 
+#
+# When set to 'Off', WSI error messages will be terse, and not reveal
+# any information about your server configuration.
+#
+# When set to 'On', WSI error messages will be verbose, and reveal
+# additional configuration information.
+#
+# It is recommended to set this to 'On' during the development cycle to
+# get more detailed error message, and to set this 'Off' during normal 
+# runtime to not reveal any potentially secure information to your users.
+#
+# The default is 'Verbose Off'.
+#----------------------------------------------------------------
+
+Verbose Off
+
+#----------------------------------------------------------------
+# keyword: Log (optional)
+#
+# The format for each line beginning with 'log' is:
+#
+#   Log On | Off | Debug [filename]
+#
+# This keyword is used to control logging of error and debug information
+# during running of the WSI application.  The default is 'Log On'.  When
+# set to 'Log Off' no additional error information is logged.  The setting
+# of 'Log Debug' should only be used when directed by Instantiations service.
+# The additional 'filename' string will override the default log filename and
+# only applies to CGI and ISAPI programs.  ICAPI and NSAPI applications 
+# use the server logging facilities and do not log entries to a seperate
+# file.
+#----------------------------------------------------------------
+
+Log On
+
+#----------------------------------------------------------------
+# keyword: errorFile (optional)
+#
+# The format for each line beginning with 'errorFile' is:
+#
+#   errorFile filename
+#
+# This keyword is used to override the default name of the error format file
+#----------------------------------------------------------------
+
+
+#----------------------------------------------------------------
+# keyword: codepage  (optional)
+#
+# The format for each line beginning with 'codepage' is:
+#
+#   codepage codepageName
+#
+# The use of this keyword allows you to override the default codepage, 819,  
+# used by most internet apps and allows VA Smalltalk to translate your client
+# data correctly..  If your users are using a codepage other than 819 in 
+# their browsers, set the codepageName string accordingly.
+#----------------------------------------------------------------

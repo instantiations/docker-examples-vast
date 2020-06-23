@@ -1,0 +1,7 @@
+# exclude everything
+Raspberry/log/*
+Raspberry64/log/*
+
+# exception to the rule
+!Raspberry/log/.gitkeep
+!Raspberry64/log/.gitkeep 
